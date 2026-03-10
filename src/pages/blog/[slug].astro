@@ -1,26 +1,13 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
-const articles = [
-  { slug: "executive-dating-south-africa", title: "Executive Dating South Africa" },
-  { slug: "how-professional-matchmaking-works", title: "How Professional Matchmaking Works" },
-  { slug: "private-dating-service-johannesburg", title: "Private Dating Service Johannesburg" },
-  { slug: "why-successful-professionals-use-matchmakers", title: "Why Successful Professionals Use Matchmakers" }
-];
-
 export async function getStaticPaths() {
-  return articles.map((article) => ({
-    params: { slug: article.slug },
-    props: { article },
-  }));
+  return [];
 }
-
-const { article } = Astro.props;
 ---
 
-<BaseLayout title={article.title}>
-  <main style="max-width: 900px; margin: 0 auto; padding: 4rem 1.5rem;">
-    <h1>{article.title}</h1>
-    <p>This article page is reserved for future dynamic blog content.</p>
+<BaseLayout title="Blog">
+  <main>
+    <h1>Blog</h1>
   </main>
 </BaseLayout>
