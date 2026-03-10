@@ -14,6 +14,20 @@
  */
 
 import BaseLayout from '../../layouts/BaseLayout.astro';
+const articles = [
+  { slug: "executive-dating-south-africa", title: "Executive Dating South Africa" },
+  { slug: "how-professional-matchmaking-works", title: "How Professional Matchmaking Works" },
+  { slug: "private-dating-service-johannesburg", title: "Private Dating Service Johannesburg" },
+  { slug: "why-successful-professionals-use-matchmaking", title: "Why Successful Professionals Use Matchmaking" }
+];
+
+
+const articles = [
+  { slug: "executive-dating-south-africa", title: "Executive Dating South Africa" },
+  { slug: "how-professional-matchmaking-works", title: "How Professional Matchmaking Works" },
+  { slug: "private-dating-service-johannesburg", title: "Private Dating Service Johannesburg" },
+  { slug: "why-successful-professionals-use-matchmaking", title: "Why Successful Professionals Use Matchmaking" }
+];
 
 export async function getStaticPaths() {
   return articles.map(article => ({
