@@ -1,0 +1,60 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+export interface Props {
+  title: string;
+  description: string;
+  heading: string;
+  lastUpdated?: string;
+  showAttorneyNotice?: boolean;
+}
+
+const { title, description, heading, lastUpdated, showAttorneyNotice = false } = Astro.props;
+---
+
+<BaseLayout title={title} description={description} hideMobileCTA={true}>
+  <div class="legal-hero">
+    <div class="container-narrow">
+      <span class="eyebrow">Legal &amp; Compliance</span>
+      <h1>{heading}</h1>
+      {lastUpdated && <p class="legal-date">Last updated: {lastUpdated}</p>}
+    </div>
+  </div>
+
+  <div class="legal-body">
+    <div class="container-narrow">
+      {showAttorneyNotice && (
+        <div class="legal-notice" role="note">
+          <strong>⚠️ Attorney Review Notice:</strong> This document has been prepared as a working draft for informational purposes. It should be reviewed and approved by a qualified South African attorney before final publication and use.
+        </div>
+      )}
+      <div class="legal-content">
+        <slot />
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+.legal-hero {
+  background: var(--color-surface-warm);
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--space-2xl) 0 var(--space-xl);
+}
+
+.legal-hero h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-top: 0.5rem;
+}
+
+.legal-date {
+  font-size: var(--text-sm);
+  color: var(--color-text-light);
+  margin-top: var(--space-sm);
+  max-width: none;
+}
+
+.legal-body {
+  padding: var(--space-2xl) 0 var(--space-3xl);
+}
+</style>

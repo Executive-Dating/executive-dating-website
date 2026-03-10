@@ -1,0 +1,312 @@
+---
+---
+
+<div class="enquiry-form-wrap">
+  <form
+    name="enquiry"
+    method="POST"
+    action="/thank-you"
+    data-netlify="true"
+    netlify-honeypot="bot-field"
+    class="enquiry-form"
+    id="enquiry-form"
+    novalidate
+  >
+    <!-- Netlify hidden fields -->
+    <input type="hidden" name="form-name" value="enquiry" />
+    <p class="sr-only" aria-hidden="true">
+      <label>Don't fill this out: <input name="bot-field" /></label>
+    </p>
+
+    <div class="form-section-label">About You</div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label" for="full-name">Full Name <span class="required">*</span></label>
+        <input
+          type="text"
+          id="full-name"
+          name="full_name"
+          class="form-input"
+          placeholder="Your full name"
+          required
+          autocomplete="name"
+        />
+        <span class="form-error" id="full-name-error" aria-live="polite"></span>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="mobile">Mobile Number <span class="required">*</span></label>
+        <input
+          type="tel"
+          id="mobile"
+          name="mobile"
+          class="form-input"
+          placeholder="e.g. 082 000 0000"
+          required
+          autocomplete="tel"
+        />
+        <span class="form-error" id="mobile-error" aria-live="polite"></span>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label" for="email">Email Address <span class="required">*</span></label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          class="form-input"
+          placeholder="your@email.com"
+          required
+          autocomplete="email"
+        />
+        <span class="form-error" id="email-error" aria-live="polite"></span>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="area">Area / City <span class="required">*</span></label>
+        <input
+          type="text"
+          id="area"
+          name="area"
+          class="form-input"
+          placeholder="e.g. Sandton, Pretoria, Midrand"
+          required
+        />
+        <span class="form-error" id="area-error" aria-live="polite"></span>
+      </div>
+    </div>
+
+    <div class="form-section-label" style="margin-top: var(--space-lg);">About What You're Looking For</div>
+
+    <div class="form-group">
+      <label class="form-label" for="introduction">Brief Introduction <span class="required">*</span></label>
+      <textarea
+        id="introduction"
+        name="introduction"
+        class="form-textarea"
+        placeholder="Tell us a little about yourself — your background, lifestyle, and what matters most to you."
+        required
+        rows="4"
+      ></textarea>
+      <span class="form-error" id="introduction-error" aria-live="polite"></span>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label" for="seeking">What Are You Looking For? <span class="required">*</span></label>
+      <textarea
+        id="seeking"
+        name="seeking"
+        class="form-textarea"
+        placeholder="Describe the relationship you are hoping to find — and the qualities that matter to you in a partner."
+        required
+        rows="4"
+      ></textarea>
+      <span class="form-error" id="seeking-error" aria-live="polite"></span>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label" for="preferences">Partner Preferences <span class="optional">(optional)</span></label>
+      <textarea
+        id="preferences"
+        name="preferences"
+        class="form-textarea"
+        placeholder="Age range, lifestyle preferences, family situation, location — anything you'd like us to know."
+        rows="3"
+      ></textarea>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label" for="referral">How Did You Hear About Us? <span class="optional">(optional)</span></label>
+      <input
+        type="text"
+        id="referral"
+        name="referral"
+        class="form-input"
+        placeholder="e.g. Google, word of mouth, social media"
+      />
+    </div>
+
+    <div class="form-section-label" style="margin-top: var(--space-lg);">Your Consent</div>
+
+    <div class="form-consents">
+      <div class="form-checkbox-group">
+        <input type="checkbox" id="whatsapp-consent" name="whatsapp_consent" value="yes" />
+        <label for="whatsapp-consent">
+          I am happy to be contacted via WhatsApp for initial communications.
+        </label>
+      </div>
+
+      <div class="form-checkbox-group">
+        <input type="checkbox" id="privacy-consent" name="privacy_consent" value="yes" required />
+        <label for="privacy-consent">
+          I have read and understood the <a href="/privacy" target="_blank">Privacy Policy</a> and <a href="/popia" target="_blank">POPIA Notice</a>, and I consent to my personal information being processed as described. <span class="required">*</span>
+        </label>
+      </div>
+      <span class="form-error" id="privacy-error" aria-live="polite"></span>
+
+      <div class="form-checkbox-group">
+        <input type="checkbox" id="terms-consent" name="terms_consent" value="yes" required />
+        <label for="terms-consent">
+          I confirm that I am 18 years or older and have read and accepted the <a href="/terms" target="_blank">Terms and Conditions</a>. <span class="required">*</span>
+        </label>
+      </div>
+      <span class="form-error" id="terms-error" aria-live="polite"></span>
+    </div>
+
+    <div class="form-disclaimer">
+      <p>Submitting this enquiry does not guarantee acceptance into the service. Every application is reviewed personally by your advisor. You will receive a response within 2–3 business days.</p>
+    </div>
+
+    <button type="submit" class="btn btn-primary form-submit">
+      Submit Confidential Enquiry
+    </button>
+
+  </form>
+</div>
+
+<style>
+.enquiry-form-wrap {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-2xl);
+  box-shadow: var(--shadow-md);
+}
+
+.form-section-label {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: var(--space-md);
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--color-gold-light);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+}
+
+.required {
+  color: var(--color-gold-deep);
+  font-weight: 700;
+}
+
+.optional {
+  color: var(--color-text-light);
+  font-weight: 400;
+  font-size: 0.875em;
+}
+
+.form-error {
+  font-size: var(--text-sm);
+  color: var(--color-error);
+  display: block;
+  min-height: 1.2em;
+}
+
+.form-consents {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: var(--space-lg);
+  margin-bottom: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-disclaimer {
+  background: var(--color-gold-tint);
+  border-radius: var(--radius-sm);
+  padding: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+.form-disclaimer p {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  font-style: italic;
+  margin: 0;
+  max-width: none;
+}
+
+.form-submit {
+  width: 100%;
+  padding: 1.125rem 2rem;
+  font-size: 1.0625rem;
+  justify-content: center;
+}
+
+@media (max-width: 600px) {
+  .enquiry-form-wrap { padding: var(--space-lg); }
+  .form-row { grid-template-columns: 1fr; }
+}
+</style>
+
+<script>
+  const form = document.getElementById('enquiry-form');
+
+  const validators = {
+    full_name: { el: 'full-name', err: 'full-name-error', msg: 'Please enter your full name.' },
+    mobile:    { el: 'mobile',    err: 'mobile-error',    msg: 'Please enter your mobile number.' },
+    email:     { el: 'email',     err: 'email-error',     msg: 'Please enter a valid email address.' },
+    area:      { el: 'area',      err: 'area-error',      msg: 'Please enter your area or city.' },
+    introduction: { el: 'introduction', err: 'introduction-error', msg: 'Please tell us a little about yourself.' },
+    seeking:   { el: 'seeking',   err: 'seeking-error',   msg: 'Please tell us what you are looking for.' },
+  };
+
+  form?.addEventListener('submit', (e) => {
+    let valid = true;
+
+    // Clear errors
+    document.querySelectorAll('.form-error').forEach(el => el.textContent = '');
+
+    // Required fields
+    for (const [name, v] of Object.entries(validators)) {
+      const input = document.getElementById(v.el);
+      if (!input?.value.trim()) {
+        const err = document.getElementById(v.err);
+        if (err) err.textContent = v.msg;
+        if (!valid) {} // already invalid
+        valid = false;
+      }
+    }
+
+    // Email format
+    const emailEl = document.getElementById('email');
+    const emailErr = document.getElementById('email-error');
+    if (emailEl?.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailEl.value)) {
+      if (emailErr) emailErr.textContent = 'Please enter a valid email address.';
+      valid = false;
+    }
+
+    // Consent checkboxes
+    const privacyCheck = document.getElementById('privacy-consent');
+    const termsCheck = document.getElementById('terms-consent');
+    const privacyErr = document.getElementById('privacy-error');
+    const termsErr = document.getElementById('terms-error');
+
+    if (!privacyCheck?.checked) {
+      if (privacyErr) privacyErr.textContent = 'Please confirm your privacy consent before submitting.';
+      valid = false;
+    }
+    if (!termsCheck?.checked) {
+      if (termsErr) termsErr.textContent = 'Please confirm you have read and accepted the Terms and Conditions.';
+      valid = false;
+    }
+
+    if (!valid) {
+      e.preventDefault();
+      const firstErr = form.querySelector('.form-error:not(:empty)');
+      firstErr?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  });
+</script>

@@ -1,0 +1,41 @@
+---
+export interface Props {
+  color?: 'gold' | 'turq' | 'muted';
+}
+const { color = 'gold' } = Astro.props;
+---
+<div class={`section-divider section-divider--${color}`} role="separator" aria-hidden="true">
+  <span class="divider-line"></span>
+  <span class="divider-diamond">◆</span>
+  <span class="divider-line"></span>
+</div>
+
+<style>
+.section-divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: var(--space-sm) 0;
+  max-width: 240px;
+  margin: 0 auto;
+}
+
+.divider-line {
+  flex: 1;
+  height: 1px;
+}
+
+.divider-diamond {
+  font-size: 0.6rem;
+  flex-shrink: 0;
+}
+
+.section-divider--gold .divider-line { background: var(--color-gold-light); }
+.section-divider--gold .divider-diamond { color: var(--color-gold); }
+
+.section-divider--turq .divider-line { background: var(--color-turq-light); }
+.section-divider--turq .divider-diamond { color: var(--color-turq); }
+
+.section-divider--muted .divider-line { background: var(--color-border); }
+.section-divider--muted .divider-diamond { color: var(--color-text-light); }
+</style>

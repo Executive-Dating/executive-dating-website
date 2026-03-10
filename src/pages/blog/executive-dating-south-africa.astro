@@ -1,0 +1,360 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const article = {
+  title: 'Why Executive Dating Is Growing in South Africa',
+  description: 'A quiet shift is happening across Gauteng. Accomplished South African professionals are turning away from dating apps and towards private introduction services. Here is why.',
+  publishDate: '2025-01-14',
+  displayDate: '14 January 2025',
+  readTime: '6 min read',
+  tag: 'Insights',
+  slug: 'executive-dating-south-africa',
+};
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": article.title,
+  "description": article.description,
+  "datePublished": article.publishDate,
+  "author": {
+    "@type": "Person",
+    "name": "Your Advisor",
+    "worksFor": { "@type": "Organization", "name": "Executive Dating" }
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Executive Dating",
+    "url": "https://executivedating.co.za"
+  },
+  "mainEntityOfPage": `https://executivedating.co.za/blog/${article.slug}`
+};
+---
+
+<BaseLayout title={`${article.title} | Executive Dating`} description={article.description}>
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+  <!-- Article Hero -->
+  <div class="article-hero bg-warm">
+    <div class="container-narrow">
+      <div class="article-breadcrumb">
+        <a href="/blog">Insights</a>
+        <span aria-hidden="true"> / </span>
+        <span>{article.tag}</span>
+      </div>
+      <span class="eyebrow">{article.tag}</span>
+      <h1>{article.title}</h1>
+      <span class="gold-rule" role="presentation"></span>
+      <div class="article-meta">
+        <span class="article-author">By Your Advisor</span>
+        <span class="meta-sep" aria-hidden="true">·</span>
+        <time datetime={article.publishDate}>{article.displayDate}</time>
+        <span class="meta-sep" aria-hidden="true">·</span>
+        <span>{article.readTime}</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero image -->
+  <div class="article-hero-img-wrap">
+    <img
+      src="/images/placeholder-lifestyle.svg"
+      alt="Executive dating South Africa — professional lifestyle"
+      class="article-hero-img"
+      loading="eager"
+    />
+  </div>
+
+  <!-- Article Body -->
+  <div class="article-layout">
+    <div class="container">
+      <div class="article-grid">
+
+        <article class="article-body">
+
+          <p class="article-lead">A quiet shift is taking place across Gauteng. Accomplished professionals — executives, entrepreneurs, business owners — are stepping away from dating apps and seeking something more considered. Not another platform. Not another algorithm. A private, curated introduction service that respects both their time and their dignity.</p>
+
+          <p>Executive dating in South Africa is growing — and the reasons are less surprising than they might seem.</p>
+
+          <h2>The Problem With Apps for Professionals</h2>
+
+          <p>South Africa's professional class has embraced digital tools in every area of life. Productivity platforms, digital banking, remote work infrastructure — technology has reshaped how accomplished people operate. But when it comes to finding a meaningful relationship, a growing number of professionals are arriving at the same conclusion: apps are not built for them.</p>
+
+          <p>The architecture of dating apps rewards volume, speed, and surface-level appeal. Swipe enough, match enough, message enough — the assumption is that quantity creates opportunity. For someone with limited time, high standards, and a genuine desire for a meaningful partnership, this model produces frustration rather than results.</p>
+
+          <p>There is also the matter of privacy. For many South African professionals — particularly those in business, law, medicine, and finance — appearing on a publicly visible dating platform carries real professional and social risk. The discretion that a private introduction service offers is not merely a preference. It is a genuine need.</p>
+
+          <h2>What Is Driving Growth in South Africa Specifically?</h2>
+
+          <p>Several factors make the South African context particularly conducive to the rise of executive matchmaking.</p>
+
+          <p><strong>A concentrated professional class in Gauteng.</strong> The economic heartland of South Africa — Johannesburg, Sandton, Pretoria, Midrand — is home to a dense population of accomplished, ambitious adults. Many are time-poor, privacy-conscious, and socially selective. They represent exactly the demographic for whom private introduction services were designed.</p>
+
+          <p><strong>The emotional cost of failed apps.</strong> After several years of widespread dating app use, many professionals are arriving at a point of genuine fatigue. The investment of time, emotional energy, and hope — followed by disappointing or hollow interactions — leaves people ready for an entirely different approach.</p>
+
+          <p><strong>A cultural value for discretion.</strong> South African professional culture places significant weight on reputation and social standing. The idea of a private, confidential introduction — arranged by a trusted human advisor rather than broadcast on a visible platform — resonates deeply with this value system.</p>
+
+          <p><strong>Post-pandemic recalibration.</strong> A generation of professionals who spent years in enforced isolation emerged with a changed relationship to time, priorities, and what they genuinely want from their personal lives. Many re-evaluated what they were looking for in a partner — and how they wanted to go about finding them.</p>
+
+          <h2>What Executive Dating in South Africa Actually Looks Like</h2>
+
+          <p>The term "executive dating" can evoke images of glossy international agencies with opaque processes and eye-watering fees. The reality of what we offer at Executive Dating is considerably more grounded — and more personal.</p>
+
+          <p>The process begins with a confidential enquiry. No upfront fee. No commitment. Simply a conversation about who you are and what you are genuinely looking for. Your advisor reviews every application personally — not through an automated filter, not through a scoring system, but through a real reading of your circumstances, your values, and your readiness.</p>
+
+          <p>Suitable applicants are invited to meet their advisor for coffee. This is not a sales meeting. It is a genuine conversation — the beginning of a relationship that will inform every introduction that follows.</p>
+
+          <p>Only after this meeting, and only if both parties are satisfied, is membership offered. This sequence matters. It means that by the time anyone pays anything, both the advisor and the member have invested time in understanding each other. The introduction that follows is built on a real foundation.</p>
+
+          <h2>Who This Service Is For</h2>
+
+          <p>Executive Dating is not for everyone — and we say that honestly. Our service is designed for adults who are genuinely ready for a meaningful relationship, who understand the value of a considered process, and who are willing to be honest with their advisor about who they are.</p>
+
+          <p>Our members include professionals across a range of fields — finance, law, healthcare, entrepreneurship, corporate leadership. What they share is not a job title. It is a quality of seriousness: a genuine readiness for something real.</p>
+
+          <p>If that describes you, we would welcome your enquiry.</p>
+
+          <!-- Internal CTA -->
+          <div class="article-cta-block">
+            <span class="gold-rule" role="presentation"></span>
+            <h3>Ready to Enquire?</h3>
+            <p>Submit a confidential enquiry — no fee, no commitment at this stage. Your application is reviewed personally by your advisor.</p>
+            <div class="article-cta-btns">
+              <a href="/enquire" class="btn btn-primary">Enquire Confidentially</a>
+              <a href="/how-it-works" class="btn btn-outline-gold">Learn How It Works</a>
+            </div>
+          </div>
+
+        </article>
+
+        <!-- Sidebar -->
+        <aside class="article-sidebar">
+          <div class="sidebar-card">
+            <h4>Also in Insights</h4>
+            <nav class="sidebar-links">
+              <a href="/blog/why-successful-professionals-use-matchmakers">Why Professionals Choose Matchmakers Over Apps</a>
+              <a href="/blog/how-professional-matchmaking-works">How Professional Matchmaking Works</a>
+              <a href="/blog/private-dating-service-johannesburg">Private Dating Services in Johannesburg</a>
+            </nav>
+          </div>
+          <div class="sidebar-card sidebar-card--gold">
+            <h4>Take the First Step</h4>
+            <p>No fee. No commitment. A personal response within 2–3 business days.</p>
+            <a href="/enquire" class="btn btn-primary">Enquire Now</a>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Back to blog -->
+  <div class="article-back bg-warm">
+    <div class="container-narrow text-center">
+      <a href="/blog" class="btn btn-outline-gold">← Back to Insights</a>
+    </div>
+  </div>
+
+</BaseLayout>
+
+<style>
+  /* shared article styles — duplicated per file so each is self-contained */
+  .article-hero {
+    padding: var(--space-xl) 0 var(--space-lg);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .article-breadcrumb {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    color: var(--color-text-light);
+    margin-bottom: var(--space-sm);
+  }
+
+  .article-breadcrumb a {
+    color: var(--color-gold-deep);
+    text-decoration: none;
+  }
+
+  .article-hero h1 {
+    font-size: clamp(2rem, 4.5vw, 3.2rem);
+    margin: 0.5rem 0 var(--space-sm);
+    max-width: 18ch;
+  }
+
+  .article-meta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    color: var(--color-text-light);
+    margin-top: var(--space-sm);
+  }
+
+  .article-author { font-weight: 700; color: var(--color-text-muted); }
+  .meta-sep { opacity: 0.4; }
+
+  .article-hero-img-wrap {
+    width: 100%;
+    max-height: 480px;
+    overflow: hidden;
+  }
+
+  .article-hero-img {
+    width: 100%;
+    height: 100%;
+    max-height: 480px;
+    object-fit: cover;
+  }
+
+  .article-layout {
+    padding: var(--space-3xl) 0;
+    background: var(--color-bg);
+  }
+
+  .article-grid {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: var(--space-3xl);
+    align-items: start;
+  }
+
+  /* Body */
+  .article-body {
+    max-width: none;
+  }
+
+  .article-lead {
+    font-family: var(--font-accent);
+    font-size: clamp(1.1rem, 2vw, 1.3rem);
+    font-style: italic;
+    line-height: 1.7;
+    color: var(--color-text);
+    border-left: 3px solid var(--color-gold);
+    padding-left: var(--space-lg);
+    margin-bottom: var(--space-xl);
+    max-width: none;
+  }
+
+  .article-body h2 {
+    font-family: var(--font-heading);
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    color: var(--color-text);
+    margin: var(--space-2xl) 0 var(--space-md);
+  }
+
+  .article-body p {
+    font-size: var(--text-base);
+    line-height: 1.82;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-md);
+    max-width: none;
+  }
+
+  .article-body strong { color: var(--color-text); font-weight: 700; }
+
+  /* In-article CTA */
+  .article-cta-block {
+    background: var(--color-gold-tint);
+    border: 1px solid var(--color-gold-light);
+    border-radius: var(--radius-md);
+    padding: var(--space-xl);
+    margin-top: var(--space-2xl);
+  }
+
+  .article-cta-block h3 {
+    font-family: var(--font-heading);
+    font-size: var(--text-2xl);
+    margin: var(--space-sm) 0;
+  }
+
+  .article-cta-block p {
+    font-size: var(--text-base);
+    margin-bottom: var(--space-lg);
+  }
+
+  .article-cta-btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+  }
+
+  /* Sidebar */
+  .article-sidebar {
+    position: sticky;
+    top: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+  }
+
+  .sidebar-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-lg);
+  }
+
+  .sidebar-card--gold {
+    background: var(--color-gold-tint);
+    border-color: var(--color-gold-light);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .sidebar-card h4 {
+    font-family: var(--font-heading);
+    font-size: var(--text-lg);
+    font-weight: 700;
+    margin-bottom: var(--space-sm);
+    color: var(--color-text);
+  }
+
+  .sidebar-card p {
+    font-size: var(--text-sm);
+    max-width: none;
+    margin: 0;
+  }
+
+  .sidebar-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .sidebar-links a {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    text-decoration: none;
+    line-height: 1.45;
+    padding: 0.4rem 0;
+    border-bottom: 1px solid var(--color-border);
+    transition: color var(--transition);
+  }
+
+  .sidebar-links a:last-child { border-bottom: none; }
+  .sidebar-links a:hover { color: var(--color-gold-deep); text-decoration: none; }
+
+  .sidebar-card .btn {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .article-back {
+    padding: var(--space-xl) 0;
+    border-top: 1px solid var(--color-border);
+  }
+
+  @media (max-width: 900px) {
+    .article-grid { grid-template-columns: 1fr; }
+    .article-sidebar { position: static; }
+    .article-hero h1 { max-width: none; }
+    .article-cta-btns { flex-direction: column; }
+  }
+</style>

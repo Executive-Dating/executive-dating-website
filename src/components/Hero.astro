@@ -1,0 +1,250 @@
+---
+export interface Props {
+  eyebrow?: string;
+  headline: string;
+  subheadline?: string;
+  primaryCta?: { label: string; href: string; };
+  secondaryCta?: { label: string; href: string; };
+  trustLine?: string;
+  imageSrc?: string;
+  imageAlt?: string;
+  tall?: boolean;
+}
+
+const {
+  eyebrow = 'A Private Introduction Service · Gauteng',
+  headline,
+  subheadline,
+  primaryCta = { label: 'Enquire Confidentially', href: '/enquire' },
+  secondaryCta = { label: '💬 Chat on WhatsApp', href: 'https://wa.me/27646286820' },
+  trustLine = 'Every enquiry is reviewed personally. Your privacy is protected.',
+  imageSrc = '/images/placeholder-hero.svg',
+  imageAlt = 'Executive Dating hero',
+  tall = false,
+} = Astro.props;
+---
+
+<section class={`hero ${tall ? 'hero-tall' : ''}`} aria-label="Hero">
+  <div class="hero-bg">
+    <img src={imageSrc} alt={imageAlt} class="hero-bg-img" />
+    <div class="hero-overlay"></div>
+    <div class="hero-gradient"></div>
+  </div>
+
+  <div class="container hero-inner">
+    <div class="hero-content">
+      <!-- Logo mark in hero -->
+      <a href="/" class="hero-logo" aria-label="Executive Dating">
+        <span class="hero-logo-main">Executive Dating</span>
+        <span class="hero-logo-sub">Private Introduction Service</span>
+      </a>
+
+      <span class="hero-eyebrow fade-in-up">{eyebrow}</span>
+      <span class="gold-rule fade-in-up fade-in-up-delay-1" role="presentation"></span>
+      <h1 class="hero-headline fade-in-up fade-in-up-delay-1">{headline}</h1>
+
+      {subheadline && (
+        <p class="hero-sub fade-in-up fade-in-up-delay-2">{subheadline}</p>
+      )}
+
+      <div class="hero-ctas fade-in-up fade-in-up-delay-3">
+        <a href={primaryCta.href} class="btn btn-primary">{primaryCta.label}</a>
+        <a href={secondaryCta.href} class="btn btn-secondary-hero" target={secondaryCta.href.startsWith('http') ? '_blank' : undefined} rel={secondaryCta.href.startsWith('http') ? 'noopener noreferrer' : undefined}>
+          {secondaryCta.label}
+        </a>
+      </div>
+
+      {trustLine && (
+        <p class="hero-trust fade-in-up fade-in-up-delay-4">{trustLine}</p>
+      )}
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="hero-scroll" aria-hidden="true">
+    <span class="scroll-line"></span>
+  </div>
+</section>
+
+<style>
+.hero {
+  position: relative;
+  min-height: 88vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 0;
+}
+
+.hero-tall {
+  min-height: 95vh;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 16, 8, 0.55);
+}
+
+.hero-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(26,26,20,0.7) 0%,
+    rgba(26,42,40,0.4) 60%,
+    rgba(201,168,76,0.08) 100%
+  );
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+.hero-content {
+  max-width: 760px;
+}
+
+.hero-logo {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  margin-bottom: var(--space-xl);
+  opacity: 0.95;
+}
+
+.hero-logo-main {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 700;
+  color: var(--color-bg);
+  line-height: 1.1;
+}
+
+.hero-logo-sub {
+  font-family: var(--font-accent);
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-top: 0.2rem;
+}
+
+.hero-eyebrow {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-gold-light);
+  margin-bottom: 0.75rem;
+}
+
+.hero-headline {
+  font-family: var(--font-heading);
+  font-size: var(--text-hero);
+  font-weight: 700;
+  color: #FAF7F2;
+  line-height: 1.1;
+  margin-bottom: var(--space-lg);
+  letter-spacing: -0.02em;
+}
+
+.hero-sub {
+  font-size: clamp(1.0625rem, 2vw, 1.25rem);
+  color: rgba(250,247,242,0.82);
+  line-height: 1.75;
+  max-width: 58ch;
+  margin-bottom: var(--space-xl);
+}
+
+.hero-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+}
+
+.btn-secondary-hero {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1rem 2.25rem;
+  border-radius: var(--radius-sm);
+  border: 2px solid rgba(250,247,242,0.6);
+  color: #FAF7F2;
+  background: transparent;
+  cursor: pointer;
+  transition: all var(--transition);
+  min-height: 52px;
+}
+.btn-secondary-hero:hover {
+  border-color: #FAF7F2;
+  background: rgba(250,247,242,0.12);
+  text-decoration: none;
+  color: #FAF7F2;
+}
+
+.hero-trust {
+  font-size: 0.875rem;
+  color: rgba(250,247,242,0.55);
+  letter-spacing: 0.04em;
+  font-style: italic;
+  margin-bottom: 0;
+  max-width: none;
+}
+
+.hero-scroll {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.scroll-line {
+  display: block;
+  width: 1px;
+  height: 48px;
+  background: linear-gradient(to bottom, rgba(201,168,76,0.8), transparent);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.5; transform: scaleY(0.8); }
+  50% { opacity: 1; transform: scaleY(1); }
+}
+
+@media (max-width: 768px) {
+  .hero { min-height: 92vh; }
+  .hero-inner { padding-top: 5rem; padding-bottom: 4rem; }
+  .hero-ctas { flex-direction: column; }
+  .btn-secondary-hero { width: 100%; text-align: center; justify-content: center; }
+}
+</style>

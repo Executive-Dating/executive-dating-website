@@ -1,0 +1,218 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FAQAccordion from '../components/FAQAccordion.astro';
+import CTABlock from '../components/CTABlock.astro';
+import ImagePlaceholder from '../components/ImagePlaceholder.astro';
+
+const faqGroups = [
+  {
+    group: 'About the Service',
+    items: [
+      {
+        question: 'Is Executive Dating a dating app?',
+        answer: 'No. Executive Dating is a private, human-led introduction service. There are no apps, no profiles to browse, and no algorithms. Every enquiry is reviewed and every introduction is personally arranged by your advisor.',
+      },
+      {
+        question: 'Is this only for executives?',
+        answer: 'The name reflects the standard of discretion and service we provide, not a job title requirement. Our members are accomplished, emotionally mature adults from a range of professional backgrounds — including executives, entrepreneurs, business owners, and individuals who value a considered, private approach to relationships.',
+      },
+      {
+        question: 'What areas do you serve?',
+        answer: 'Our primary focus is Gauteng and surrounding areas, including Johannesburg, Sandton, Pretoria, Midrand, and Centurion. If you are outside this region, please reach out — we will be honest about whether we are able to assist you effectively.',
+      },
+      {
+        question: 'Is this suitable if I have been through a divorce or significant life transition?',
+        answer: 'Yes. Many of our members come to us during or after significant life changes. Our advisor takes an unhurried, sensitive approach and understands that each person\'s circumstances are different. There is no pressure and no judgment.',
+      },
+    ],
+  },
+  {
+    group: 'The Process',
+    items: [
+      {
+        question: 'What happens after I submit an enquiry?',
+        answer: 'Your enquiry is reviewed personally by your advisor within 2–3 business days. If your application is a good fit, you will be invited to meet for coffee. If not, we will let you know honestly and respectfully. You will always receive a response — we do not leave enquiries unanswered.',
+      },
+      {
+        question: 'Do I have to pay to submit an enquiry?',
+        answer: 'No. Submitting an enquiry is completely free and carries no commitment whatsoever.',
+      },
+      {
+        question: 'What is the coffee meeting?',
+        answer: 'It is a relaxed, private conversation between you and your advisor — before any membership is offered or fees paid. It helps your advisor understand you better, and gives you an opportunity to ask any questions about the service. There is no obligation on either side.',
+      },
+      {
+        question: 'Can I be rejected?',
+        answer: 'Yes. We reserve the right to decline any application, and we exercise that right in order to maintain the quality and experience of the membership. If your application is not suitable, we will tell you respectfully. Our right to decline is not a reflection of your worth — it reflects the selective nature of the service.',
+      },
+    ],
+  },
+  {
+    group: 'Membership and Fees',
+    items: [
+      {
+        question: 'How much does it cost?',
+        answer: 'Membership is R5,500 for 12 months. This is only discussed and agreed upon after your coffee meeting. There are no upfront costs to enquire or to attend the coffee meeting.',
+      },
+      {
+        question: 'Are there any hidden fees?',
+        answer: 'No. The R5,500 covers your 12-month membership in full. There are no introductory fees, no per-introduction charges, and no hidden costs of any kind.',
+      },
+      {
+        question: 'Is the membership fee refundable?',
+        answer: 'Membership fees are generally non-refundable once membership has been accepted and the introduction process has begun. This is discussed clearly and openly during your coffee meeting before any commitment is made. Please refer to our Terms and Conditions for full details.',
+      },
+      {
+        question: 'Will my membership automatically renew?',
+        answer: 'No. There are no automatic renewals. Any renewal is a separate, voluntary decision entirely at your discretion.',
+      },
+    ],
+  },
+  {
+    group: 'Introductions',
+    items: [
+      {
+        question: 'How many introductions will I receive?',
+        answer: 'There is no fixed number. Quality is always prioritised over quantity. Your advisor will only arrange an introduction when there is genuine reason to believe it could be a meaningful connection — not simply to fulfil a quota.',
+      },
+      {
+        question: 'Will I be consulted before an introduction is made?',
+        answer: 'Yes, always. You will be informed and given the opportunity to decline before any introduction proceeds. Your comfort and consent are essential to the process.',
+      },
+      {
+        question: 'Are the people I am introduced to also members?',
+        answer: 'Introductions are only made between consenting members or carefully pre-screened individuals. Your personal details are never shared without your explicit consent.',
+      },
+    ],
+  },
+  {
+    group: 'Confidentiality and Privacy',
+    items: [
+      {
+        question: 'Is my information confidential?',
+        answer: 'Yes. We operate under South African privacy law (POPIA) and treat your personal information with the highest level of care. Your information is never sold, never shared without your consent, and never used for any purpose other than the introduction service.',
+      },
+      {
+        question: 'Will other members know I have enquired?',
+        answer: 'No. All enquiries are handled with complete discretion. Other members are not informed of who has applied or enquired.',
+      },
+      {
+        question: 'What are my rights under POPIA?',
+        answer: 'Under the Protection of Personal Information Act (POPIA), you have the right to access, correct, and request deletion of your personal information at any time. You may also object to its processing. For full details, please read our Privacy Policy and POPIA Notice.',
+      },
+    ],
+  },
+];
+---
+
+<BaseLayout
+  title="Frequently Asked Questions — Executive Dating"
+  description="Answers to common questions about how Executive Dating works, who it is for, confidentiality, membership pricing, and the introduction process."
+>
+
+  <!-- Page Hero -->
+  <div class="faq-hero bg-warm">
+    <div class="container-narrow text-center">
+      <span class="eyebrow">FAQ</span>
+      <h1>Frequently Asked Questions</h1>
+      <span class="gold-rule gold-rule-center" role="presentation"></span>
+      <p class="faq-hero-intro">If you have a question that is not answered here, you are welcome to reach out directly on WhatsApp or submit an enquiry.</p>
+    </div>
+  </div>
+
+  <section class="faq-section bg-cream">
+    <div class="container">
+      <div class="faq-layout">
+        <div class="faq-main">
+          <FAQAccordion groups={faqGroups} />
+        </div>
+        <aside class="faq-sidebar">
+          <ImagePlaceholder
+            src="/images/placeholder-faq.svg"
+            alt="FAQ — calm and professional"
+            label="Replace: FAQ illustration"
+            style="height: 240px; margin-bottom: var(--space-lg);"
+          />
+          <div class="faq-contact-card">
+            <h3>Still Have a Question?</h3>
+            <p>Reach out directly and we will be happy to help.</p>
+            <a href="https://wa.me/27646286820" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
+              💬 WhatsApp
+            </a>
+            <a href="mailto:executivedating08@gmail.com" class="btn btn-outline-gold">
+              ✉ Email Us
+            </a>
+            <a href="/enquire" class="btn btn-primary">
+              Submit an Enquiry
+            </a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <CTABlock
+    heading="Ready to Enquire?"
+    body="No commitment. No fee. Simply tell us a little about yourself."
+    bg="dark"
+  />
+
+</BaseLayout>
+
+<style>
+.faq-hero {
+  padding: var(--space-2xl) 0 var(--space-xl);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.faq-hero-intro {
+  font-size: var(--text-lg);
+  max-width: 55ch;
+  margin: var(--space-md) auto 0;
+  text-align: center;
+}
+
+.faq-layout {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: var(--space-3xl);
+  align-items: start;
+}
+
+.faq-sidebar {
+  position: sticky;
+  top: 100px;
+}
+
+.faq-contact-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.faq-contact-card h3 {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  margin-bottom: 0.25rem;
+}
+
+.faq-contact-card p {
+  font-size: var(--text-sm);
+  max-width: none;
+  margin: 0 0 0.25rem;
+}
+
+.faq-contact-card .btn {
+  text-align: center;
+  justify-content: center;
+}
+
+@media (max-width: 900px) {
+  .faq-layout { grid-template-columns: 1fr; }
+  .faq-sidebar { position: static; order: -1; }
+}
+</style>

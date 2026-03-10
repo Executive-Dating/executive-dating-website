@@ -1,0 +1,92 @@
+---
+---
+
+<div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie notice" aria-live="polite">
+  <div class="cookie-inner">
+    <p class="cookie-text">
+      This website uses essential cookies to function. We also use anonymous analytics cookies to understand how the site is used.
+      For details, see our <a href="/cookies">Cookie Policy</a>.
+    </p>
+    <div class="cookie-actions">
+      <button class="btn btn-primary cookie-accept" id="cookie-accept">Accept All</button>
+      <button class="btn btn-secondary cookie-essential" id="cookie-essential">Essential Only</button>
+    </div>
+  </div>
+</div>
+
+<style>
+.cookie-banner {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  right: 1.5rem;
+  max-width: 640px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  z-index: 9999;
+  padding: var(--space-lg);
+  display: none;
+}
+
+.cookie-banner.visible { display: block; }
+
+.cookie-inner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  flex-wrap: wrap;
+}
+
+.cookie-text {
+  flex: 1;
+  font-size: 0.9375rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin: 0;
+  min-width: 200px;
+  max-width: none;
+}
+
+.cookie-text a { color: var(--color-gold-deep); }
+
+.cookie-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.cookie-accept,
+.cookie-essential {
+  padding: 0.625rem 1.25rem;
+  font-size: 0.875rem;
+  min-height: 44px;
+}
+
+@media (max-width: 600px) {
+  .cookie-banner { left: 1rem; right: 1rem; }
+  .cookie-inner { flex-direction: column; align-items: stretch; }
+  .cookie-actions { flex-direction: column; }
+  .cookie-accept, .cookie-essential { width: 100%; }
+}
+</style>
+
+<script>
+  const banner = document.getElementById('cookie-banner');
+  const accepted = localStorage.getItem('cookie-consent');
+
+  if (!accepted) {
+    banner?.classList.add('visible');
+  }
+
+  document.getElementById('cookie-accept')?.addEventListener('click', () => {
+    localStorage.setItem('cookie-consent', 'all');
+    banner?.classList.remove('visible');
+  });
+
+  document.getElementById('cookie-essential')?.addEventListener('click', () => {
+    localStorage.setItem('cookie-consent', 'essential');
+    banner?.classList.remove('visible');
+  });
+</script>

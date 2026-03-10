@@ -1,0 +1,717 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const benefits = [
+  {
+    icon: '👤',
+    title: 'Personal Advisor Relationship',
+    body: 'One trusted advisor who knows you — your circumstances, your values, and what you are genuinely seeking.',
+  },
+  {
+    icon: '◆',
+    title: 'Curated, Considered Introductions',
+    body: 'Each introduction is individually selected. Quality over volume — always. You are consulted before anything proceeds.',
+  },
+  {
+    icon: '🔒',
+    title: 'Complete Discretion and Privacy',
+    body: 'Your membership, your information, and your search remain entirely confidential at every stage.',
+  },
+  {
+    icon: '✓',
+    title: 'Professional Screening',
+    body: 'Every member is personally reviewed and accepted. You will only ever be introduced to people who have been through the same process.',
+  },
+  {
+    icon: '☕',
+    title: 'Ongoing Advisor Support',
+    body: 'Your advisor remains available throughout your membership — for guidance, reflection, and continued refinement of what you are looking for.',
+  },
+  {
+    icon: '◇',
+    title: 'No Automatic Renewal',
+    body: 'Your membership runs for 12 months. Renewal is always your decision. There are no hidden ongoing commitments.',
+  },
+];
+
+const faqs = [
+  {
+    q: 'Is payment required before the advisor meeting?',
+    a: 'No. Payment is only requested after you have met your advisor for coffee and been formally invited to become a member. There is no fee to submit an enquiry and no fee to attend the consultation meeting.',
+  },
+  {
+    q: 'Is my personal and financial information confidential?',
+    a: 'Yes — completely. Your personal information is protected under POPIA and handled with the utmost discretion. Your banking details, once payment is made, are not stored by us.',
+  },
+  {
+    q: 'What happens if no introductions are made?',
+    a: 'We do not guarantee a specific number of introductions. What we do guarantee is that your advisor will only arrange an introduction when there is genuine reason to believe it could be meaningful. If circumstances mean no suitable match is identified during your membership, we will be honest with you throughout.',
+  },
+  {
+    q: 'Can I get a refund after paying?',
+    a: 'Membership fees are generally non-refundable once membership has been accepted and the introduction process has begun. This is discussed openly during your coffee meeting before any commitment is made. Please read our Terms and Conditions for full details.',
+  },
+  {
+    q: 'What is the payment reference I should use for EFT?',
+    a: 'Please use your full name as the payment reference so we can match your payment to your application.',
+  },
+];
+---
+
+<BaseLayout
+  title="Membership — Executive Dating | R5,500 for 12 Months"
+  description="Executive Dating membership is by invitation only. Learn about the process, pricing, and payment — and why membership is only offered after your coffee meeting with your advisor."
+>
+
+  <!-- Schema -->
+  <script type="application/ld+json">{
+    JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Executive Dating Membership",
+      "provider": { "@type": "Organization", "name": "Executive Dating", "url": "https://executivedating.co.za" },
+      "description": "Private, human-led introduction service membership for discerning professionals in Gauteng, South Africa.",
+      "areaServed": { "@type": "State", "name": "Gauteng" },
+      "offers": {
+        "@type": "Offer",
+        "price": "5500",
+        "priceCurrency": "ZAR",
+        "description": "12-month membership — by invitation only after personal advisor meeting"
+      }
+    })
+  }</script>
+
+  <!-- ── Hero ─────────────────────────────────────── -->
+  <div class="mem-hero bg-warm">
+    <div class="container-narrow text-center">
+      <span class="eyebrow">Membership</span>
+      <h1>Membership by Invitation Only</h1>
+      <span class="gold-rule gold-rule-center" role="presentation"></span>
+      <p class="mem-hero-intro">You cannot simply pay and join Executive Dating. Membership is offered only after a personal review of your enquiry and a face-to-face coffee meeting with your advisor. This is what makes it meaningful.</p>
+    </div>
+  </div>
+
+  <!-- ── Process ───────────────────────────────────── -->
+  <section class="mem-process bg-cream">
+    <div class="container">
+      <div class="text-center" style="margin-bottom: var(--space-2xl);">
+        <span class="eyebrow">How It Works</span>
+        <h2 class="section-title">The Path to Membership</h2>
+        <span class="gold-rule gold-rule-center" role="presentation"></span>
+      </div>
+
+      <div class="mem-steps">
+        {[
+          { num: '01', title: 'Submit a Confidential Enquiry', body: 'Use the online form, email, or WhatsApp. Tell us a little about who you are and what you are looking for. No fee. No commitment at this stage.', free: true },
+          { num: '02', title: 'Your Application Is Reviewed Personally', body: 'Your advisor reads every enquiry individually — no algorithms, no automated filtering. If your application looks like a genuine fit, we will be in touch.', free: true },
+          { num: '03', title: 'Coffee Meeting With Your Advisor', body: 'Suitable applicants are invited to meet for coffee — a relaxed, private conversation before any decision is made. This is your opportunity to ask anything you want.', free: true },
+          { num: '04', title: 'Membership Invitation', body: 'If both parties are satisfied, you are formally invited to become a member. It is only at this point that the membership fee is discussed and requested.', free: false },
+          { num: '05', title: 'Curated Introductions Begin', body: 'Your advisor begins the considered process of identifying introductions suited to who you genuinely are — one at a time, with care.', free: false },
+        ].map((step, i) => (
+          <div class="mem-step">
+            <div class="mem-step-num">{step.num}</div>
+            <div class="mem-step-content">
+              <h3 class="mem-step-title">{step.title}</h3>
+              <p class="mem-step-body">{step.body}</p>
+            </div>
+            <div class={`mem-step-badge ${step.free ? 'badge-free' : 'badge-member'}`}>
+              {step.free ? 'No fee' : 'Member stage'}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Pricing ───────────────────────────────────── -->
+  <section class="mem-pricing bg-gold-tint">
+    <div class="container">
+      <div class="pricing-layout">
+
+        <div class="pricing-text">
+          <span class="eyebrow">Pricing</span>
+          <h2 class="section-title">Simple, Transparent Pricing</h2>
+          <span class="gold-rule" role="presentation"></span>
+          <p>There is one membership fee. It covers everything. There are no introductory charges, no per-meeting fees, and no hidden costs of any kind.</p>
+          <p>The fee is only requested after your coffee meeting and formal acceptance. You will never be asked to pay before you have met your advisor and made a considered, informed decision.</p>
+          <ul class="styled-list" style="margin-top: var(--space-md);">
+            <li>No fee to enquire</li>
+            <li>No fee to attend your coffee meeting</li>
+            <li>Payment only after acceptance and your decision to proceed</li>
+            <li>No automatic renewal</li>
+          </ul>
+        </div>
+
+        <div class="pricing-card-wrap">
+          <div class="pricing-card">
+            <div class="pricing-card-top">
+              <span class="eyebrow" style="color: var(--color-gold);">Executive Membership</span>
+              <div class="pricing-amount">
+                <span class="price-r">R</span>
+                <span class="price-num">5,500</span>
+              </div>
+              <p class="price-period">for 12 months</p>
+              <span class="gold-rule" role="presentation"></span>
+            </div>
+            <ul class="pricing-includes">
+              {[
+                'Personal advisor relationship',
+                'Curated introductions — one at a time',
+                'Consultation before every introduction',
+                'Ongoing advisor support',
+                'Full POPIA-compliant privacy protection',
+                'No automatic renewal',
+              ].map(item => (
+                <li>
+                  <span class="pi-dot" aria-hidden="true">◆</span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <button
+              class="btn btn-primary pricing-cta"
+              id="membership-cta-btn"
+              type="button"
+              aria-haspopup="dialog"
+            >
+              Enquire About Membership
+            </button>
+            <p class="pricing-note">Payment is only required after acceptance. <a href="/terms">Terms apply.</a></p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Payment ───────────────────────────────────── -->
+  <section class="mem-payment bg-cream">
+    <div class="container">
+      <div class="text-center" style="margin-bottom: var(--space-2xl);">
+        <span class="eyebrow">Payment</span>
+        <h2 class="section-title">How to Pay Your Membership Fee</h2>
+        <span class="gold-rule gold-rule-center" role="presentation"></span>
+        <p class="section-subtitle" style="margin: 0 auto;">After your coffee meeting and formal acceptance, your advisor will confirm the payment details below.</p>
+      </div>
+
+      <div class="payment-layout">
+
+        <!-- EFT Card — PRIMARY / LIVE -->
+        <div class="payment-card payment-card--primary">
+          <div class="payment-card-header">
+            <span class="payment-live-badge">Available Now</span>
+            <div class="payment-icon" aria-hidden="true">🏦</div>
+            <h3>EFT Bank Transfer</h3>
+            <p>Secure, direct bank-to-bank payment. Preferred method for membership fees.</p>
+          </div>
+          <div class="payment-eft-details">
+            <div class="eft-row"><span class="eft-label">Bank</span><span class="eft-value">FNB</span></div>
+            <div class="eft-row"><span class="eft-label">Account Name</span><span class="eft-value">Executive Dating</span></div>
+            <div class="eft-row"><span class="eft-label">Account Number</span><span class="eft-value">[Add your account number]</span></div>
+            <div class="eft-row"><span class="eft-label">Branch Code</span><span class="eft-value">[Add your branch code]</span></div>
+            <div class="eft-row"><span class="eft-label">Reference</span><span class="eft-value eft-ref">Your full name</span></div>
+          </div>
+          <div class="eft-note">
+            <p>Once payment is made, please WhatsApp or email your proof of payment to confirm. Your membership will be activated within one business day of receipt.</p>
+          </div>
+          <a href="mailto:executivedating08@gmail.com?subject=Proof of Payment — Membership" class="btn btn-primary">
+            Email Proof of Payment
+          </a>
+        </div>
+
+        <!-- Card / PayFast — Coming Soon -->
+        <div class="payment-card payment-card--soon">
+          <div class="payment-card-header">
+            <span class="payment-soon-badge">Coming Soon</span>
+            <div class="payment-icon" aria-hidden="true">💳</div>
+            <h3>Online Card Payment</h3>
+            <p>Secure online card payment via PayFast. This option will be available soon.</p>
+          </div>
+          <div class="payment-soon-note">
+            <p>In the meantime, please use EFT or contact us via WhatsApp and we will assist you.</p>
+          </div>
+          <button class="btn btn-outline-gold" disabled aria-disabled="true">
+            Coming Soon
+          </button>
+        </div>
+
+        <!-- WhatsApp option -->
+        <div class="payment-card payment-card--wa">
+          <div class="payment-card-header">
+            <span class="payment-live-badge">Available Now</span>
+            <div class="payment-icon" aria-hidden="true">💬</div>
+            <h3>Pay via WhatsApp Arrangement</h3>
+            <p>Unsure? Reach out on WhatsApp and your advisor will guide you through payment personally.</p>
+          </div>
+          <div class="payment-soon-note">
+            <p>Particularly useful if you have questions about the process or prefer a guided payment experience.</p>
+          </div>
+          <a href="https://wa.me/27646286820" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
+            💬 WhatsApp Your Advisor
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Benefits ──────────────────────────────────── -->
+  <section class="mem-benefits bg-white">
+    <div class="container">
+      <div class="text-center" style="margin-bottom: var(--space-2xl);">
+        <span class="eyebrow">What You Receive</span>
+        <h2 class="section-title">Membership Benefits</h2>
+        <span class="gold-rule gold-rule-center" role="presentation"></span>
+      </div>
+      <div class="benefits-grid">
+        {benefits.map(b => (
+          <div class="benefit-card">
+            <div class="benefit-icon" aria-hidden="true">{b.icon}</div>
+            <h3 class="benefit-title">{b.title}</h3>
+            <p>{b.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FAQ ───────────────────────────────────────── -->
+  <section class="mem-faq bg-cream">
+    <div class="container">
+      <div class="faq-layout-mem">
+        <div>
+          <span class="eyebrow">Payment FAQ</span>
+          <h2 class="section-title" style="font-size: var(--text-3xl);">Common Questions</h2>
+          <span class="gold-rule" role="presentation"></span>
+          <div class="mem-faqs">
+            {faqs.map((item, i) => (
+              <div class="mem-faq-item">
+                <button
+                  class="mem-faq-q"
+                  aria-expanded="false"
+                  aria-controls={`mfaq-${i}`}
+                  data-faq-toggle
+                >
+                  <span>{item.q}</span>
+                  <span class="faq-icon" aria-hidden="true">+</span>
+                </button>
+                <div class="mem-faq-a" id={`mfaq-${i}`} hidden>
+                  <p>{item.a}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div class="mem-faq-aside">
+          <img
+            src="/images/placeholder-consultation.svg"
+            alt="Membership consultation — professional meeting"
+            loading="lazy"
+            style="border-radius: var(--radius-md); width: 100%; height: 300px; object-fit: cover; margin-bottom: var(--space-lg);"
+          />
+          <div class="mem-aside-card">
+            <h4>Still Have Questions?</h4>
+            <p>Reach out directly and your advisor will be happy to help.</p>
+            <a href="https://wa.me/27646286820" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
+              💬 WhatsApp
+            </a>
+            <a href="/faq" class="btn btn-outline-gold">
+              Full FAQ
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Final CTA ─────────────────────────────────── -->
+  <section class="mem-final-cta bg-dark section-sm">
+    <div class="container text-center">
+      <span class="gold-rule gold-rule-center" role="presentation"></span>
+      <h2 style="color: var(--color-bg);">Ready to Begin the Process?</h2>
+      <p style="color: rgba(250,247,242,0.7); margin: var(--space-md) auto var(--space-xl); max-width: 52ch;">Submit a confidential enquiry — no fee, no commitment. Your application is reviewed personally within 2–3 business days.</p>
+      <div class="final-cta-btns">
+        <a href="/enquire" class="btn btn-primary">Enquire Confidentially</a>
+        <a href="https://wa.me/27646286820" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
+          💬 WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Contact Modal ──────────────────────────────── -->
+  <div class="mem-modal-overlay" id="mem-modal-overlay" role="dialog" aria-modal="true" aria-label="Get in touch" hidden>
+    <div class="mem-modal">
+      <button class="mem-modal-close" id="mem-modal-close" aria-label="Close">✕</button>
+      <span class="eyebrow">Get in Touch</span>
+      <h3>Ready to Enquire About Membership?</h3>
+      <span class="gold-rule" role="presentation"></span>
+      <p>Choose how you'd like to reach your advisor. There is no commitment at this stage.</p>
+      <div class="mem-modal-options">
+        <a href="/enquire" class="btn btn-primary modal-option-btn">
+          Submit Online Enquiry
+        </a>
+        <a href="https://wa.me/27646286820" class="btn btn-whatsapp modal-option-btn" target="_blank" rel="noopener noreferrer">
+          💬 Chat on WhatsApp
+        </a>
+        <a href="mailto:executivedating08@gmail.com" class="btn btn-outline-gold modal-option-btn">
+          ✉ Send an Email
+        </a>
+      </div>
+      <p class="modal-note">Your enquiry is reviewed personally. You will receive a response within 2–3 business days.</p>
+    </div>
+  </div>
+
+</BaseLayout>
+
+<style>
+/* Hero */
+.mem-hero { padding: var(--space-2xl) 0 var(--space-xl); border-bottom: 1px solid var(--color-border); }
+.mem-hero-intro { font-size: var(--text-lg); max-width: 58ch; margin: var(--space-md) auto 0; text-align: center; }
+
+/* Process steps */
+.mem-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.mem-step {
+  display: grid;
+  grid-template-columns: 72px 1fr auto;
+  gap: var(--space-lg);
+  align-items: center;
+  padding: var(--space-lg) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+.mem-step:last-child { border-bottom: none; }
+
+.mem-step-num {
+  font-family: var(--font-accent);
+  font-size: 1rem;
+  font-style: italic;
+  font-weight: 600;
+  color: var(--color-gold);
+  width: 52px;
+  height: 52px;
+  border: 1.5px solid var(--color-gold-light);
+  border-radius: 50%;
+  background: var(--color-gold-tint);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.mem-step-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  color: var(--color-text);
+}
+
+.mem-step-body { font-size: var(--text-base); color: var(--color-text-muted); line-height: 1.65; margin: 0; max-width: none; }
+
+.mem-step-badge {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.8rem;
+  border-radius: 100px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.badge-free { background: var(--color-turq-tint); color: var(--color-turq-deep); border: 1px solid var(--color-turq-light); }
+.badge-member { background: var(--color-gold-tint); color: var(--color-gold-deep); border: 1px solid var(--color-gold-light); }
+
+/* Pricing */
+.pricing-layout {
+  display: grid;
+  grid-template-columns: 1fr 460px;
+  gap: var(--space-3xl);
+  align-items: center;
+}
+
+.pricing-card-wrap { display: flex; justify-content: center; }
+
+.pricing-card {
+  background: var(--color-surface);
+  border: 1.5px solid var(--color-gold-light);
+  border-radius: var(--radius-lg);
+  padding: var(--space-2xl);
+  box-shadow: var(--shadow-gold);
+  width: 100%;
+  max-width: 420px;
+  position: relative;
+  overflow: hidden;
+}
+.pricing-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(to right, var(--color-gold), var(--color-turq));
+}
+
+.pricing-card-top { margin-bottom: var(--space-lg); }
+.pricing-amount { display: flex; align-items: baseline; gap: 0.25rem; margin: 0.5rem 0 0.25rem; }
+.price-r { font-family: var(--font-heading); font-size: var(--text-2xl); font-weight: 700; color: var(--color-text-muted); }
+.price-num { font-family: var(--font-heading); font-size: clamp(2.8rem, 5vw, 3.8rem); font-weight: 800; color: var(--color-text); line-height: 1; }
+.price-period { font-family: var(--font-accent); font-style: italic; font-size: var(--text-lg); color: var(--color-text-muted); margin-bottom: var(--space-sm); }
+
+.pricing-includes { list-style: none; padding: 0; margin-bottom: var(--space-xl); display: flex; flex-direction: column; gap: 0.65rem; }
+.pricing-includes li { display: flex; gap: 0.7rem; align-items: flex-start; font-size: var(--text-base); color: var(--color-text-muted); line-height: 1.5; }
+.pi-dot { color: var(--color-gold); font-size: 0.55rem; flex-shrink: 0; margin-top: 0.5rem; }
+
+.pricing-cta { width: 100%; text-align: center; justify-content: center; margin-bottom: var(--space-sm); }
+.pricing-note { font-size: var(--text-sm); color: var(--color-text-light); text-align: center; margin: 0; max-width: none; }
+.pricing-note a { color: var(--color-gold-deep); }
+
+/* Payment */
+.payment-layout {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+}
+
+.payment-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  transition: box-shadow var(--transition), transform var(--transition);
+}
+
+.payment-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
+.payment-card--primary { border-color: var(--color-gold-light); border-top: 3px solid var(--color-gold); }
+.payment-card--wa { border-top: 3px solid #25D366; }
+.payment-card--soon { opacity: 0.7; }
+
+.payment-card-header { text-align: center; }
+
+.payment-live-badge, .payment-soon-badge {
+  display: inline-block;
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.75rem;
+  border-radius: 100px;
+  margin-bottom: var(--space-sm);
+}
+.payment-live-badge { background: var(--color-turq-tint); color: var(--color-turq-deep); border: 1px solid var(--color-turq-light); }
+.payment-soon-badge { background: var(--color-surface-warm); color: var(--color-text-light); border: 1px solid var(--color-border); }
+
+.payment-icon { font-size: 2rem; margin-bottom: 0.5rem; display: block; }
+.payment-card-header h3 { font-family: var(--font-heading); font-size: var(--text-xl); font-weight: 700; margin-bottom: 0.5rem; }
+.payment-card-header p { font-size: var(--text-sm); color: var(--color-text-muted); margin: 0; max-width: none; }
+
+/* EFT details */
+.payment-eft-details {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+.eft-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.65rem var(--space-md);
+  border-bottom: 1px solid var(--color-border);
+  gap: var(--space-md);
+}
+.eft-row:last-child { border-bottom: none; }
+.eft-label { font-size: var(--text-sm); font-weight: 700; color: var(--color-text-muted); flex-shrink: 0; }
+.eft-value { font-size: var(--text-sm); color: var(--color-text); text-align: right; }
+.eft-ref { font-weight: 700; color: var(--color-gold-deep); }
+
+.eft-note p { font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.6; margin: 0; max-width: none; }
+.payment-soon-note p { font-size: var(--text-sm); color: var(--color-text-muted); max-width: none; margin: 0; }
+
+.payment-card .btn { width: 100%; text-align: center; justify-content: center; margin-top: auto; }
+.payment-card .btn[disabled] { opacity: 0.45; cursor: not-allowed; pointer-events: none; }
+
+/* Benefits */
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+}
+.benefit-card {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-xl);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.benefit-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-sm); }
+.benefit-icon { font-size: 1.75rem; margin-bottom: var(--space-sm); display: block; color: var(--color-gold); }
+.benefit-title { font-family: var(--font-heading); font-size: var(--text-lg); font-weight: 700; margin-bottom: 0.5rem; }
+.benefit-card p { font-size: var(--text-sm); line-height: 1.65; color: var(--color-text-muted); margin: 0; max-width: none; }
+
+/* FAQ */
+.faq-layout-mem {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: var(--space-3xl);
+  align-items: start;
+}
+
+.mem-faqs { margin-top: var(--space-lg); }
+.mem-faq-item { border-bottom: 1px solid var(--color-border); }
+.mem-faq-q {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-md) 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--color-text);
+  transition: color var(--transition);
+}
+.mem-faq-q:hover, .mem-faq-q[aria-expanded="true"] { color: var(--color-gold-deep); }
+.faq-icon { font-size: 1.4rem; font-weight: 300; color: var(--color-gold); flex-shrink: 0; transition: transform var(--transition); line-height: 1; }
+.mem-faq-q[aria-expanded="true"] .faq-icon { transform: rotate(45deg); }
+.mem-faq-a { padding-bottom: var(--space-md); }
+.mem-faq-a p { font-size: var(--text-base); color: var(--color-text-muted); line-height: 1.75; max-width: none; margin: 0; }
+
+.mem-aside-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.mem-aside-card h4 { font-family: var(--font-heading); font-size: var(--text-xl); font-weight: 700; }
+.mem-aside-card p { font-size: var(--text-sm); max-width: none; margin: 0; }
+.mem-aside-card .btn { text-align: center; justify-content: center; }
+
+/* Final CTA */
+.mem-final-cta { text-align: center; }
+.final-cta-btns { display: flex; justify-content: center; flex-wrap: wrap; gap: var(--space-sm); }
+
+/* Modal */
+.mem-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(26,26,20,0.65);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-lg);
+  backdrop-filter: blur(4px);
+}
+.mem-modal-overlay[hidden] { display: none; }
+
+.mem-modal {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-2xl);
+  max-width: 480px;
+  width: 100%;
+  position: relative;
+  box-shadow: var(--shadow-lg);
+}
+
+.mem-modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  color: var(--color-text-light);
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background var(--transition), color var(--transition);
+}
+.mem-modal-close:hover { background: var(--color-bg); color: var(--color-text); }
+
+.mem-modal h3 { font-family: var(--font-heading); font-size: var(--text-2xl); font-weight: 700; margin: 0.5rem 0 var(--space-sm); }
+.mem-modal p { font-size: var(--text-base); color: var(--color-text-muted); margin-bottom: var(--space-lg); max-width: none; }
+.mem-modal-options { display: flex; flex-direction: column; gap: 0.75rem; }
+.modal-option-btn { width: 100%; text-align: center; justify-content: center; }
+.modal-note { font-size: var(--text-sm); color: var(--color-text-light); font-style: italic; text-align: center; margin: var(--space-md) 0 0; }
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .pricing-layout { grid-template-columns: 1fr; }
+  .pricing-card-wrap { justify-content: flex-start; }
+  .payment-layout { grid-template-columns: 1fr; }
+  .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .mem-step { grid-template-columns: 52px 1fr; }
+  .mem-step-badge { grid-column: 2; margin-top: -0.25rem; }
+  .benefits-grid { grid-template-columns: 1fr; }
+  .faq-layout-mem { grid-template-columns: 1fr; }
+  .final-cta-btns { flex-direction: column; align-items: center; }
+  .final-cta-btns .btn { width: 100%; max-width: 360px; }
+}
+</style>
+
+<script>
+  // FAQ accordion
+  document.querySelectorAll('[data-faq-toggle]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      const id = btn.getAttribute('aria-controls');
+      const panel = document.getElementById(id);
+      btn.setAttribute('aria-expanded', String(!expanded));
+      if (expanded) { panel?.setAttribute('hidden', ''); }
+      else { panel?.removeAttribute('hidden'); }
+    });
+  });
+
+  // Modal
+  const overlay = document.getElementById('mem-modal-overlay');
+  const ctaBtn = document.getElementById('membership-cta-btn');
+  const closeBtn = document.getElementById('mem-modal-close');
+
+  ctaBtn?.addEventListener('click', () => {
+    overlay?.removeAttribute('hidden');
+    document.body.style.overflow = 'hidden';
+    closeBtn?.focus();
+  });
+
+  function closeModal() {
+    overlay?.setAttribute('hidden', '');
+    document.body.style.overflow = '';
+    ctaBtn?.focus();
+  }
+
+  closeBtn?.addEventListener('click', closeModal);
+
+  overlay?.addEventListener('click', (e) => {
+    if (e.target === overlay) closeModal();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !overlay?.hasAttribute('hidden')) closeModal();
+  });
+</script>

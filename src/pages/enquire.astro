@@ -1,0 +1,195 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import EnquiryForm from '../components/EnquiryForm.astro';
+import ImagePlaceholder from '../components/ImagePlaceholder.astro';
+---
+
+<BaseLayout
+  title="Enquire About Membership — Executive Dating"
+  description="Submit a confidential enquiry to Executive Dating. Your application is reviewed personally. There is no fee and no commitment at this stage."
+  hideMobileCTA={true}
+>
+
+  <!-- Page Hero -->
+  <div class="enquire-hero bg-warm">
+    <div class="container-narrow text-center">
+      <span class="eyebrow">Take the First Step</span>
+      <h1>Make a Confidential Enquiry</h1>
+      <span class="gold-rule gold-rule-center" role="presentation"></span>
+      <p class="enquire-intro">Thank you for considering Executive Dating. Your enquiry is treated with complete confidentiality and reviewed personally by your advisor. There is no fee at this stage and no commitment required.</p>
+      <p class="enquire-alt">If you prefer, you are welcome to reach out directly via WhatsApp: <a href="https://wa.me/27646286820" target="_blank" rel="noopener noreferrer"><strong>064 628 6820</strong></a></p>
+    </div>
+  </div>
+
+  <!-- Form Layout -->
+  <section class="enquire-section bg-cream">
+    <div class="container">
+      <div class="enquire-layout">
+
+        <div class="enquire-main">
+          <EnquiryForm />
+        </div>
+
+        <aside class="enquire-sidebar">
+          <ImagePlaceholder
+            src="/images/placeholder-contact.svg"
+            alt="Confidential enquiry — discreet and professional"
+            label="Replace: Contact section image"
+            style="height: 300px; margin-bottom: var(--space-lg);"
+          />
+
+          <div class="sidebar-info-card">
+            <h3>What Happens Next</h3>
+            <ol class="next-steps-list">
+              <li>
+                <span class="ns-num">1</span>
+                <div>
+                  <strong>Personal Review</strong>
+                  <p>Your advisor reviews your enquiry personally — usually within 2–3 business days.</p>
+                </div>
+              </li>
+              <li>
+                <span class="ns-num">2</span>
+                <div>
+                  <strong>If Suitable — Coffee Invitation</strong>
+                  <p>If your application looks like a good fit, we will contact you to arrange a coffee meeting.</p>
+                </div>
+              </li>
+              <li>
+                <span class="ns-num">3</span>
+                <div>
+                  <strong>Respectful Response Either Way</strong>
+                  <p>If the service is not currently a suitable match, we will let you know respectfully. You will always receive a response.</p>
+                </div>
+              </li>
+            </ol>
+          </div>
+
+          <div class="sidebar-privacy-card">
+            <h4>🔒 Your Privacy</h4>
+            <p>The information you provide is used solely to assess your suitability for membership and to respond to your enquiry. It will not be shared with third parties without your consent. Read our <a href="/privacy">Privacy Policy</a> and <a href="/popia">POPIA Notice</a>.</p>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+.enquire-hero {
+  padding: var(--space-2xl) 0 var(--space-xl);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.enquire-intro {
+  font-size: var(--text-lg);
+  max-width: 58ch;
+  margin: var(--space-md) auto var(--space-sm);
+  text-align: center;
+}
+
+.enquire-alt {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  text-align: center;
+  max-width: none;
+  margin: 0;
+}
+
+.enquire-layout {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: var(--space-2xl);
+  align-items: start;
+}
+
+.enquire-sidebar {
+  position: sticky;
+  top: 100px;
+}
+
+.sidebar-info-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  margin-bottom: var(--space-lg);
+}
+
+.sidebar-info-card h3 {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  margin-bottom: var(--space-md);
+}
+
+.next-steps-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.next-steps-list li {
+  display: flex;
+  gap: var(--space-sm);
+  align-items: flex-start;
+}
+
+.ns-num {
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  background: var(--color-gold-tint);
+  border: 1px solid var(--color-gold-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-gold-deep);
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.next-steps-list strong {
+  display: block;
+  font-size: var(--text-base);
+  margin-bottom: 0.25rem;
+}
+
+.next-steps-list p {
+  font-size: var(--text-sm);
+  line-height: 1.55;
+  margin: 0;
+  max-width: none;
+}
+
+.sidebar-privacy-card {
+  background: var(--color-gold-tint);
+  border: 1px solid var(--color-gold-light);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+}
+
+.sidebar-privacy-card h4 {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  margin-bottom: var(--space-sm);
+}
+
+.sidebar-privacy-card p {
+  font-size: var(--text-sm);
+  line-height: 1.65;
+  margin: 0;
+  max-width: none;
+}
+
+@media (max-width: 960px) {
+  .enquire-layout { grid-template-columns: 1fr; }
+  .enquire-sidebar { position: static; }
+}
+</style>

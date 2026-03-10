@@ -1,0 +1,240 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const article = {
+  title: 'Private Dating Services in Johannesburg',
+  description: 'Johannesburg professionals increasingly seek private introduction services offering discretion, human judgment, and curated connections — across Sandton, Rosebank, Randburg and beyond.',
+  publishDate: '2025-03-10',
+  displayDate: '10 March 2025',
+  readTime: '6 min read',
+  tag: 'Johannesburg',
+  slug: 'private-dating-service-johannesburg',
+};
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": article.title,
+  "description": article.description,
+  "datePublished": article.publishDate,
+  "author": {
+    "@type": "Person",
+    "name": "Your Advisor",
+    "worksFor": { "@type": "Organization", "name": "Executive Dating" }
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Executive Dating",
+    "url": "https://executivedating.co.za"
+  },
+  "mainEntityOfPage": `https://executivedating.co.za/blog/${article.slug}`,
+  "about": {
+    "@type": "Service",
+    "name": "Executive Dating",
+    "areaServed": [
+      { "@type": "City", "name": "Johannesburg" },
+      { "@type": "City", "name": "Sandton" },
+      { "@type": "City", "name": "Rosebank" },
+      { "@type": "City", "name": "Randburg" },
+      { "@type": "City", "name": "Midrand" },
+      { "@type": "City", "name": "Pretoria" }
+    ]
+  }
+};
+
+const areas = [
+  { name: 'Sandton', desc: 'The commercial heart of Johannesburg, home to finance, law, and corporate headquarters — and a dense concentration of accomplished professionals managing demanding careers.' },
+  { name: 'Rosebank', desc: 'A sophisticated urban neighbourhood attracting professionals, entrepreneurs, and creatives who value proximity to culture, hospitality, and a refined lifestyle.' },
+  { name: 'Randburg', desc: 'A growing professional community with strong representation across business, healthcare, and education — increasingly choosing private introductions over public dating platforms.' },
+  { name: 'Midrand', desc: 'Strategically positioned between Johannesburg and Pretoria, Midrand draws executives from a range of industries who split their time across both cities.' },
+];
+---
+
+<BaseLayout title={`${article.title} | Executive Dating`} description={article.description}>
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+  <div class="article-hero bg-warm">
+    <div class="container-narrow">
+      <div class="article-breadcrumb">
+        <a href="/blog">Insights</a>
+        <span aria-hidden="true"> / </span>
+        <span>{article.tag}</span>
+      </div>
+      <span class="eyebrow">{article.tag}</span>
+      <h1>{article.title}</h1>
+      <span class="gold-rule" role="presentation"></span>
+      <div class="article-meta">
+        <span class="article-author">By Your Advisor</span>
+        <span class="meta-sep" aria-hidden="true">·</span>
+        <time datetime={article.publishDate}>{article.displayDate}</time>
+        <span class="meta-sep" aria-hidden="true">·</span>
+        <span>{article.readTime}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="article-hero-img-wrap">
+    <img
+      src="/images/placeholder-contact.svg"
+      alt="Private dating service Johannesburg — Sandton professional lifestyle"
+      class="article-hero-img"
+      loading="eager"
+    />
+  </div>
+
+  <div class="article-layout">
+    <div class="container">
+      <div class="article-grid">
+
+        <article class="article-body">
+
+          <p class="article-lead">Johannesburg is home to some of South Africa's most accomplished professionals — and some of its most demanding personal lives. A city defined by ambition, pace, and social complexity, it is a place where privacy matters, reputation counts, and the idea of finding meaningful connection through a publicly visible dating app feels increasingly at odds with how accomplished adults actually want to live.</p>
+
+          <p>It is also a city where private introduction services are growing in quiet but genuine significance.</p>
+
+          <h2>Why Johannesburg Is Different</h2>
+
+          <p>The social geography of Johannesburg creates a particular kind of challenge for professionals seeking relationships. Social circles overlap considerably. Industries are close-knit. The same names appear across different networks — business, social, charitable, professional. In this environment, the visibility of a dating app profile is not merely awkward. For many people, it is a genuine concern.</p>
+
+          <p>A private introduction service operates entirely outside these visible networks. There is no profile to stumble across. No mutual connection to navigate. No moment of recognition in an unexpected context. The confidentiality is structural — built into the design of the service rather than bolted on as an afterthought.</p>
+
+          <h2>The Professional Neighbourhoods We Serve</h2>
+
+          <div class="areas-grid">
+            {areas.map(area => (
+              <div class="area-card">
+                <h3>{area.name}</h3>
+                <p>{area.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          <p>We also serve members across Pretoria, Centurion, and the broader Gauteng region. If you are uncertain whether we cover your area, reach out and ask — we will tell you honestly.</p>
+
+          <h2>What Professional Life in Johannesburg Demands</h2>
+
+          <p>The rhythm of professional life in Johannesburg — long working weeks, significant social and business commitments, travel, and the general intensity of operating at a high level — creates a particular set of conditions for finding a relationship.</p>
+
+          <p>Time is genuinely scarce. Energy is a finite resource. The idea of spending it on low-quality matches, disappointing encounters, and the emotional labour of managing a dating app is not simply unappealing — it is, for many people, simply not viable.</p>
+
+          <p>Professional matchmaking addresses this directly. The investment of time required is front-loaded into one meaningful conversation with your advisor. What follows requires far less of you than the sustained effort of managing a dating app — while delivering introductions of significantly higher quality.</p>
+
+          <h2>Discretion as a Professional Value</h2>
+
+          <p>In a city where professional and social reputation carry real weight, the value of discretion is not abstract. It is practical.</p>
+
+          <p>Our members include people whose professional standing would be meaningfully affected by public knowledge of their personal circumstances. Divorce proceedings. High-profile roles. Leadership positions in which the appearance of stability carries professional consequence. For these individuals, a private introduction service is not a luxury — it is the only approach that makes sense.</p>
+
+          <p>Every enquiry, every application, every introduction, and every conversation is handled with absolute confidentiality. Your information is never shared without your explicit consent. Your membership is never visible to others. Even the fact of your enquiry remains between you and your advisor.</p>
+
+          <h2>Starting in Johannesburg</h2>
+
+          <p>If you are based in Johannesburg — or anywhere across the broader Gauteng region — and you are genuinely ready for a meaningful relationship, we welcome your enquiry.</p>
+
+          <p>The process is simple. It begins with a short, confidential introduction — through our <a href="/enquire">online form</a>, by email, or via WhatsApp. There is no fee at this stage and no commitment of any kind. Your advisor will read your enquiry personally and respond within 2–3 business days.</p>
+
+          <p>If the service is a good fit for you, you will be invited to meet for coffee. From there, everything proceeds at your pace.</p>
+
+          <div class="article-cta-block">
+            <span class="gold-rule" role="presentation"></span>
+            <h3>Serving Gauteng's Professional Community</h3>
+            <p>Submit a confidential enquiry from anywhere in Gauteng. Your advisor is based in Johannesburg and serves members across the region.</p>
+            <div class="article-cta-btns">
+              <a href="/enquire" class="btn btn-primary">Enquire Confidentially</a>
+              <a href="/how-it-works" class="btn btn-outline-gold">How It Works</a>
+            </div>
+          </div>
+
+        </article>
+
+        <aside class="article-sidebar">
+          <div class="sidebar-card">
+            <h4>Service Areas</h4>
+            <ul class="area-list">
+              {['Sandton', 'Johannesburg CBD', 'Rosebank', 'Randburg', 'Midrand', 'Pretoria', 'Centurion', 'Broader Gauteng'].map(a => (
+                <li>{a}</li>
+              ))}
+            </ul>
+          </div>
+          <div class="sidebar-card">
+            <h4>Also in Insights</h4>
+            <nav class="sidebar-links">
+              <a href="/blog/executive-dating-south-africa">Why Executive Dating Is Growing in SA</a>
+              <a href="/blog/why-successful-professionals-use-matchmakers">Why Professionals Choose Matchmakers Over Apps</a>
+              <a href="/blog/how-professional-matchmaking-works">How Professional Matchmaking Works</a>
+            </nav>
+          </div>
+          <div class="sidebar-card sidebar-card--gold">
+            <h4>Take the First Step</h4>
+            <p>No fee. No commitment. A personal response within 2–3 business days.</p>
+            <a href="/enquire" class="btn btn-primary">Enquire Now</a>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="article-back bg-warm">
+    <div class="container-narrow text-center">
+      <a href="/blog" class="btn btn-outline-gold">← Back to Insights</a>
+    </div>
+  </div>
+
+</BaseLayout>
+
+<style>
+  .article-hero { padding: var(--space-xl) 0 var(--space-lg); border-bottom: 1px solid var(--color-border); }
+  .article-breadcrumb { font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text-light); margin-bottom: var(--space-sm); }
+  .article-breadcrumb a { color: var(--color-gold-deep); text-decoration: none; }
+  .article-hero h1 { font-size: clamp(2rem, 4.5vw, 3.2rem); margin: 0.5rem 0 var(--space-sm); max-width: 22ch; }
+  .article-meta { display: flex; align-items: center; flex-wrap: wrap; gap: 0.5rem; font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text-light); margin-top: var(--space-sm); }
+  .article-author { font-weight: 700; color: var(--color-text-muted); }
+  .meta-sep { opacity: 0.4; }
+  .article-hero-img-wrap { width: 100%; max-height: 480px; overflow: hidden; }
+  .article-hero-img { width: 100%; height: 100%; max-height: 480px; object-fit: cover; }
+  .article-layout { padding: var(--space-3xl) 0; background: var(--color-bg); }
+  .article-grid { display: grid; grid-template-columns: 1fr 300px; gap: var(--space-3xl); align-items: start; }
+  .article-lead { font-family: var(--font-accent); font-size: clamp(1.1rem, 2vw, 1.3rem); font-style: italic; line-height: 1.7; color: var(--color-text); border-left: 3px solid var(--color-gold); padding-left: var(--space-lg); margin-bottom: var(--space-xl); max-width: none; }
+  .article-body h2 { font-family: var(--font-heading); font-size: var(--text-2xl); font-weight: 700; color: var(--color-text); margin: var(--space-2xl) 0 var(--space-md); }
+  .article-body p { font-size: var(--text-base); line-height: 1.82; color: var(--color-text-muted); margin-bottom: var(--space-md); max-width: none; }
+  .article-body a { color: var(--color-gold-deep); }
+  .article-body strong { color: var(--color-text); font-weight: 700; }
+
+  /* Areas grid */
+  .areas-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md); margin: var(--space-lg) 0 var(--space-xl); }
+  .area-card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--space-lg); border-top: 3px solid var(--color-turq); }
+  .area-card h3 { font-family: var(--font-heading); font-size: var(--text-lg); font-weight: 700; margin-bottom: 0.5rem; color: var(--color-text); }
+  .area-card p { font-size: var(--text-sm); line-height: 1.6; color: var(--color-text-muted); margin: 0; }
+
+  .article-cta-block { background: var(--color-gold-tint); border: 1px solid var(--color-gold-light); border-radius: var(--radius-md); padding: var(--space-xl); margin-top: var(--space-2xl); }
+  .article-cta-block h3 { font-family: var(--font-heading); font-size: var(--text-2xl); margin: var(--space-sm) 0; }
+  .article-cta-block p { font-size: var(--text-base); margin-bottom: var(--space-lg); }
+  .article-cta-btns { display: flex; flex-wrap: wrap; gap: var(--space-sm); }
+  .article-sidebar { position: sticky; top: 100px; display: flex; flex-direction: column; gap: var(--space-lg); }
+  .sidebar-card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--space-lg); }
+  .sidebar-card--gold { background: var(--color-gold-tint); border-color: var(--color-gold-light); display: flex; flex-direction: column; gap: 0.75rem; }
+  .sidebar-card h4 { font-family: var(--font-heading); font-size: var(--text-lg); font-weight: 700; margin-bottom: var(--space-sm); color: var(--color-text); }
+  .sidebar-card p { font-size: var(--text-sm); max-width: none; margin: 0; }
+
+  .area-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.4rem; }
+  .area-list li { font-size: var(--text-sm); color: var(--color-text-muted); padding: 0.3rem 0 0.3rem 1rem; border-bottom: 1px solid var(--color-border); position: relative; }
+  .area-list li:last-child { border-bottom: none; }
+  .area-list li::before { content: '◆'; position: absolute; left: 0; font-size: 0.45rem; color: var(--color-turq); top: 0.55rem; }
+
+  .sidebar-links { display: flex; flex-direction: column; gap: 0.6rem; }
+  .sidebar-links a { font-size: var(--text-sm); color: var(--color-text-muted); text-decoration: none; line-height: 1.45; padding: 0.4rem 0; border-bottom: 1px solid var(--color-border); transition: color var(--transition); }
+  .sidebar-links a:last-child { border-bottom: none; }
+  .sidebar-links a:hover { color: var(--color-gold-deep); text-decoration: none; }
+  .sidebar-card .btn { width: 100%; text-align: center; justify-content: center; }
+  .article-back { padding: var(--space-xl) 0; border-top: 1px solid var(--color-border); }
+
+  @media (max-width: 900px) {
+    .article-grid { grid-template-columns: 1fr; }
+    .article-sidebar { position: static; }
+    .article-hero h1 { max-width: none; }
+    .article-cta-btns { flex-direction: column; }
+    .areas-grid { grid-template-columns: 1fr; }
+  }
+</style>

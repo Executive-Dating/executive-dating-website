@@ -1,0 +1,79 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Thank You — We've Received Your Enquiry"
+  description="Your enquiry has been received and will be reviewed personally by your advisor."
+  hideMobileCTA={true}
+>
+  <div class="ty-page bg-cream">
+    <div class="container-narrow text-center">
+      <div class="ty-icon" aria-hidden="true">✉</div>
+      <span class="eyebrow">Enquiry Received</span>
+      <h1>Thank You</h1>
+      <span class="gold-rule gold-rule-center" role="presentation"></span>
+      <div class="ty-content">
+        <p>Your enquiry has been submitted successfully and will be reviewed personally by your advisor.</p>
+        <p>You can expect to hear from us within <strong>2–3 business days</strong>. We will be in touch via the contact details you provided.</p>
+        <p>In the meantime, if you have any questions, you are welcome to reach out on WhatsApp:</p>
+        <a href="https://wa.me/27646286820" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer" style="margin: var(--space-md) auto; display: inline-flex;">
+          💬 064 628 6820
+        </a>
+        <p class="ty-sign-off">We look forward to learning more about you.</p>
+      </div>
+      <a href="/" class="back-link">← Return to Home</a>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+.ty-page {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  padding: var(--space-3xl) 0;
+}
+
+.ty-icon {
+  font-size: 3.5rem;
+  margin-bottom: var(--space-md);
+  display: block;
+  color: var(--color-gold);
+}
+
+.ty-content {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-2xl);
+  margin: var(--space-xl) 0;
+  box-shadow: var(--shadow-sm);
+}
+
+.ty-content p {
+  font-size: var(--text-lg);
+  text-align: center;
+  margin: 0 auto var(--space-sm);
+  max-width: 55ch;
+}
+
+.ty-sign-off {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-size: var(--text-xl) !important;
+  color: var(--color-text) !important;
+  margin-top: var(--space-md) !important;
+}
+
+.back-link {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  text-decoration: none;
+  display: inline-block;
+  margin-top: var(--space-sm);
+  transition: color var(--transition);
+}
+
+.back-link:hover { color: var(--color-gold-deep); text-decoration: none; }
+</style>

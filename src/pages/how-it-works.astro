@@ -1,0 +1,304 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTABlock from '../components/CTABlock.astro';
+import ImagePlaceholder from '../components/ImagePlaceholder.astro';
+import SectionDivider from '../components/SectionDivider.astro';
+
+const steps = [
+  {
+    number: '01',
+    title: 'You Reach Out',
+    body: 'It begins with a confidential enquiry. Use our online form, send us an email, or reach out on WhatsApp. Tell us a little about who you are, where you are in life, and what you are hoping to find. There is no commitment at this stage. No payment. No pressure. We treat every enquiry with complete discretion.',
+    note: 'There is no fee to enquire.',
+    accent: 'gold',
+  },
+  {
+    number: '02',
+    title: 'We Review Your Application',
+    body: 'Unlike a dating app, your enquiry is not processed by an algorithm. Your advisor reads every application personally and considers whether the service is a genuine fit — for you, and for the existing membership. If your application is not suitable, we will let you know honestly and respectfully. If it looks promising, we will be in touch to arrange the next step.',
+    note: 'You will always receive a response.',
+    accent: 'turq',
+  },
+  {
+    number: '03',
+    title: 'An Invitation to Meet Over Coffee',
+    body: 'Suitable applicants are invited to meet their advisor for coffee. This is not a formal interview — it is a relaxed, private conversation. The purpose is simple: to understand you better. Your life, your values, what you have been through, and what you are genuinely hoping for. This is also your opportunity to ask any questions before making any decision.',
+    note: 'Still no fee at this stage.',
+    accent: 'gold',
+  },
+  {
+    number: '04',
+    title: 'Membership by Invitation',
+    body: 'If both parties are satisfied following the coffee meeting, you will be formally invited to become a member. Membership is R5,500 for 12 months and is discussed openly during your meeting. There are no surprises, no hidden fees, and no pressure to proceed.',
+    note: 'Only accepted members pay to join.',
+    accent: 'turq',
+  },
+  {
+    number: '05',
+    title: 'Considered, Curated Introductions',
+    body: 'Once you are a member, your advisor begins the careful process of identifying introductions suited to who you are. We do not send you a list of profiles. We arrange considered, curated introductions — one at a time, with thought and care. You will always be consulted before any introduction is made.',
+    note: 'Quality over quantity, always.',
+    accent: 'gold',
+  },
+  {
+    number: '06',
+    title: 'We Are With You Throughout',
+    body: 'Your advisor remains available to you throughout your membership. Whether you need guidance after an introduction, want to revisit what you are looking for, or simply need a thoughtful perspective — we are here. This is an ongoing relationship, not a one-time transaction.',
+    note: 'Ongoing support is included in your membership.',
+    accent: 'turq',
+  },
+];
+---
+
+<BaseLayout
+  title="How Executive Dating Works — The Introduction Process"
+  description="Learn exactly how our human-led introduction process works — from your first enquiry to a curated introduction. No apps. No algorithms. Every step guided by your advisor."
+>
+
+  <!-- Page Hero -->
+  <div class="page-hero bg-warm">
+    <div class="container-narrow text-center">
+      <span class="eyebrow">The Process</span>
+      <h1>How Executive Dating Works</h1>
+      <span class="gold-rule gold-rule-center" role="presentation"></span>
+      <p class="hero-intro">We have designed this process to feel nothing like a dating app — because it is not one. From your first enquiry to your first introduction, every step is guided by a human advisor who is genuinely invested in your outcome.</p>
+    </div>
+  </div>
+
+  <!-- Steps -->
+  <section class="steps-section bg-cream">
+    <div class="container">
+      <div class="steps-layout">
+        <div class="steps-list">
+          {steps.map((step, i) => (
+            <div class={`step-block step-block--${step.accent}`}>
+              <div class="step-header">
+                <span class="step-num">{step.number}</span>
+                <h2 class="step-title">{step.title}</h2>
+              </div>
+              <div class="step-body-wrap">
+                <p class="step-body">{step.body}</p>
+                <div class="step-note">
+                  <span class="step-note-icon" aria-hidden="true">{step.accent === 'gold' ? '◆' : '◇'}</span>
+                  {step.note}
+                </div>
+              </div>
+              {i === 2 && (
+                <div class="step-inline-image">
+                  <ImagePlaceholder
+                    src="/images/placeholder-coffee.svg"
+                    alt="Coffee meeting — warm, relaxed setting"
+                    label="Replace: Coffee meeting image"
+                    style="height: 280px; margin-top: var(--space-md);"
+                  />
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+
+        <div class="steps-sidebar">
+          <div class="sidebar-card">
+            <h3>At a Glance</h3>
+            <ol class="glance-list">
+              <li>Enquire confidentially</li>
+              <li>Advisor reviews personally</li>
+              <li>Coffee meeting</li>
+              <li>Membership invitation</li>
+              <li>Curated introductions</li>
+              <li>Ongoing support</li>
+            </ol>
+          </div>
+
+          <div class="sidebar-contact">
+            <h3>Have a Question First?</h3>
+            <p>You are welcome to reach out before submitting a formal enquiry.</p>
+            <a href="https://wa.me/27646286820" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
+              💬 WhatsApp Us
+            </a>
+            <a href="mailto:executivedating08@gmail.com" class="btn btn-outline-gold" style="margin-top: 0.75rem;">
+              ✉ Email Us
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTABlock
+    heading="Ready to Begin?"
+    body="Submit a confidential enquiry and take the first step toward something meaningful."
+    primaryLabel="Enquire Now"
+    bg="dark"
+  />
+
+</BaseLayout>
+
+<style>
+.page-hero {
+  padding: var(--space-2xl) 0 var(--space-xl);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.hero-intro {
+  font-size: var(--text-lg);
+  color: var(--color-text-muted);
+  margin: var(--space-md) auto 0;
+  max-width: 58ch;
+  text-align: center;
+}
+
+.steps-layout {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: var(--space-3xl);
+  align-items: start;
+}
+
+.steps-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.step-block {
+  padding: var(--space-xl) 0;
+  border-bottom: 1px solid var(--color-border);
+  position: relative;
+}
+
+.step-block:last-child { border-bottom: none; }
+
+.step-block::before {
+  content: '';
+  position: absolute;
+  left: -2rem;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  border-radius: 3px;
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.step-block--gold::before { background: var(--color-gold); }
+.step-block--turq::before { background: var(--color-turq); }
+.step-block:hover::before { opacity: 1; }
+
+.step-header {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-md);
+  margin-bottom: var(--space-sm);
+}
+
+.step-num {
+  font-family: var(--font-accent);
+  font-size: 1rem;
+  font-style: italic;
+  font-weight: 600;
+  color: var(--color-gold);
+  flex-shrink: 0;
+  background: var(--color-gold-tint);
+  border: 1px solid var(--color-gold-light);
+  border-radius: 100px;
+  padding: 0.2rem 0.75rem;
+}
+
+.step-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.step-body-wrap { padding-left: 3rem; }
+
+.step-body {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  line-height: 1.78;
+  margin-bottom: var(--space-sm);
+  max-width: 64ch;
+}
+
+.step-note {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-gold-deep);
+  background: var(--color-gold-tint);
+  padding: 0.35rem 0.9rem;
+  border-radius: 100px;
+}
+
+.step-note-icon { font-size: 0.5rem; }
+
+.step-inline-image { padding-left: 3rem; }
+
+/* Sidebar */
+.steps-sidebar {
+  position: sticky;
+  top: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.sidebar-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+}
+
+.sidebar-card h3,
+.sidebar-contact h3 {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  margin-bottom: var(--space-md);
+  color: var(--color-text);
+}
+
+.glance-list {
+  padding-left: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.glance-list li {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  padding-left: 0.25rem;
+}
+
+.sidebar-contact {
+  background: var(--color-gold-tint);
+  border: 1px solid var(--color-gold-light);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+}
+
+.sidebar-contact p {
+  font-size: var(--text-sm);
+  margin-bottom: var(--space-md);
+  max-width: none;
+}
+
+.sidebar-contact .btn {
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+}
+
+@media (max-width: 900px) {
+  .steps-layout { grid-template-columns: 1fr; }
+  .steps-sidebar { position: static; }
+  .step-body-wrap, .step-inline-image { padding-left: 0; }
+  .step-block::before { display: none; }
+}
+</style>

@@ -1,0 +1,219 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="container">
+      <div class="footer-grid">
+
+        <!-- Brand -->
+        <div class="footer-brand">
+          <a href="/" class="footer-logo">
+            <span class="footer-logo-main">Executive Dating</span>
+            <span class="footer-logo-sub">Private Introduction Service</span>
+          </a>
+          <p>A discreet, human-led introduction service for discerning adults in Gauteng and surrounding areas, South Africa.</p>
+          <div class="footer-contact-items">
+            <a href="mailto:executivedating08@gmail.com" class="footer-contact-link">
+              ✉ executivedating08@gmail.com
+            </a>
+            <a href="https://wa.me/27646286820" class="footer-contact-link whatsapp" target="_blank" rel="noopener noreferrer">
+              💬 064 628 6820
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-col">
+          <h4>The Service</h4>
+          <nav>
+            <a href="/how-it-works">How It Works</a>
+            <a href="/meet-your-advisor">Meet Your Advisor</a>
+            <a href="/faq">Frequently Asked Questions</a>
+            <a href="/enquire">Make an Enquiry</a>
+          </nav>
+        </div>
+
+        <!-- Legal -->
+        <div class="footer-col">
+          <h4>Legal & Compliance</h4>
+          <nav>
+            <a href="/terms">Terms &amp; Conditions</a>
+            <a href="/privacy">Privacy Policy</a>
+            <a href="/popia">POPIA Notice</a>
+            <a href="/disclaimer">Website Disclaimer</a>
+            <a href="/cookies">Cookie Policy</a>
+            <a href="/paia">PAIA Manual</a>
+          </nav>
+        </div>
+
+        <!-- CTA -->
+        <div class="footer-col">
+          <h4>Take the First Step</h4>
+          <p class="footer-cta-text">Submit a confidential enquiry. No fee. No pressure.</p>
+          <div class="footer-cta-btns">
+            <a href="/enquire" class="btn btn-primary">Enquire Now</a>
+            <a href="https://wa.me/27646286820" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
+              WhatsApp
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container">
+      <p class="footer-copy">
+        &copy; {currentYear} Executive Dating. All rights reserved. Service region: Gauteng, South Africa.
+      </p>
+      <p class="footer-disclaimer">
+        Executive Dating is a private introduction service. We do not guarantee compatibility or any particular outcome. All introductions are at the discretion of the advisor. Please review our <a href="/terms">Terms&nbsp;&amp;&nbsp;Conditions</a> before enquiring.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<style>
+.site-footer {
+  background: #1A1A14;
+  color: rgba(250,247,242,0.8);
+}
+
+.footer-top {
+  padding: var(--space-3xl) 0 var(--space-2xl);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr 1fr 1.3fr;
+  gap: var(--space-xl);
+}
+
+.footer-logo {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  margin-bottom: var(--space-md);
+}
+
+.footer-logo-main {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-bg);
+}
+
+.footer-logo-sub {
+  font-family: var(--font-accent);
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-top: 0.1rem;
+}
+
+.footer-brand p {
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: rgba(250,247,242,0.6);
+  max-width: 32ch;
+  margin-bottom: var(--space-md);
+}
+
+.footer-contact-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-contact-link {
+  font-size: 0.9375rem;
+  color: rgba(250,247,242,0.7);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+.footer-contact-link:hover { color: var(--color-gold); text-decoration: none; }
+.footer-contact-link.whatsapp:hover { color: #25D366; }
+
+.footer-col h4 {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: var(--space-md);
+}
+
+.footer-col nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-col nav a {
+  font-size: 0.9375rem;
+  color: rgba(250,247,242,0.65);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+.footer-col nav a:hover { color: var(--color-bg); text-decoration: none; }
+
+.footer-cta-text {
+  font-size: 0.9375rem;
+  color: rgba(250,247,242,0.6);
+  margin-bottom: var(--space-md);
+  max-width: 28ch;
+}
+
+.footer-cta-btns {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-cta-btns .btn {
+  font-size: 0.875rem;
+  padding: 0.75rem 1.5rem;
+  text-align: center;
+  width: 100%;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding: var(--space-lg) 0;
+}
+
+.footer-copy {
+  font-size: 0.875rem;
+  color: rgba(250,247,242,0.4);
+  margin-bottom: 0.5rem;
+  max-width: 100%;
+}
+
+.footer-disclaimer {
+  font-size: 0.8125rem;
+  color: rgba(250,247,242,0.3);
+  line-height: 1.6;
+  max-width: 100%;
+}
+
+.footer-disclaimer a {
+  color: rgba(250,247,242,0.45);
+}
+
+@media (max-width: 1024px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl) var(--space-lg);
+  }
+  .footer-brand { grid-column: 1 / -1; }
+}
+
+@media (max-width: 600px) {
+  .footer-grid { grid-template-columns: 1fr; }
+}
+</style>

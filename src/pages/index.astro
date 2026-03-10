@@ -1,0 +1,297 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import TrustBar from '../components/TrustBar.astro';
+import HowItWorksSteps from '../components/HowItWorksSteps.astro';
+import MembershipCard from '../components/MembershipCard.astro';
+import CTABlock from '../components/CTABlock.astro';
+import SectionDivider from '../components/SectionDivider.astro';
+import ImagePlaceholder from '../components/ImagePlaceholder.astro';
+---
+
+<BaseLayout
+  title="Executive Dating — Private Introduction Service, Gauteng"
+  description="A discreet, human-led introduction service for accomplished professionals in Gauteng. No apps. No algorithms. Personal, curated, and confidential."
+>
+
+  <Hero
+    headline="Curated Introductions for Discerning Adults"
+    subheadline="Executive Dating is not an app. It is not an algorithm. It is a personal, discreet introduction service — guided by a human advisor who takes the time to understand who you are and what you are genuinely looking for."
+    tall={true}
+  />
+
+  <!-- What Is Executive Dating -->
+  <section class="what-section bg-cream">
+    <div class="container">
+      <div class="what-grid">
+        <div class="what-text">
+          <span class="eyebrow">About the Service</span>
+          <h2 class="section-title">Not an App. Not a Platform.<br />A Personal Service.</h2>
+          <span class="gold-rule" role="presentation"></span>
+          <p>Executive Dating exists for people who are done with swiping, ghosting, and algorithm-driven suggestions that miss the mark entirely.</p>
+          <p>We offer something different: a quiet, considered, human-led introduction process for accomplished adults who value their time, their privacy, and their emotional wellbeing.</p>
+          <p>Your enquiry is reviewed personally by your advisor. If your application is suitable, you will be invited to meet for coffee before any commitment is made. Only once you are accepted — and only if you choose to join — will a membership fee apply.</p>
+          <p><strong>No surprises. No pressure. No apps.</strong></p>
+          <div class="what-actions">
+            <a href="/how-it-works" class="btn btn-primary">Learn How It Works</a>
+            <a href="/enquire" class="btn btn-outline-gold">Enquire Confidentially</a>
+          </div>
+        </div>
+        <div class="what-image">
+          <ImagePlaceholder
+            src="/images/placeholder-lifestyle.svg"
+            alt="Premium lifestyle — accomplished professional"
+            
+            style="height: 520px;"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <SectionDivider />
+
+  <!-- How It Works Summary -->
+  <section class="hiw-section bg-white">
+    <div class="container">
+      <div class="hiw-layout">
+        <div class="hiw-header">
+          <span class="eyebrow">The Process</span>
+          <h2 class="section-title">How It Works</h2>
+          <span class="gold-rule" role="presentation"></span>
+          <p class="section-subtitle">From your first enquiry to your first introduction — every step is guided by your advisor.</p>
+          <a href="/how-it-works" class="btn btn-outline-gold" style="margin-top: 1rem;">Full Process Details →</a>
+        </div>
+        <div class="hiw-steps-col">
+          <HowItWorksSteps />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <SectionDivider color="turq" />
+
+  <!-- Who This Is For -->
+  <section class="who-section bg-cream">
+    <div class="container">
+      <div class="who-grid">
+        <div class="who-image">
+          <ImagePlaceholder
+            src="/images/placeholder-consultation.svg"
+            alt="Professional in consultation — refined setting"
+            style="height: 480px;"
+          />
+        </div>
+        <div class="who-text">
+          <span class="eyebrow">Suitability</span>
+          <h2 class="section-title">This Service Is For You If…</h2>
+          <span class="gold-rule" role="presentation"></span>
+          <p>Executive Dating is designed for accomplished, emotionally mature adults who are serious about finding a meaningful relationship — but who do not have time for the noise of conventional dating platforms.</p>
+          <ul class="styled-list" style="margin: var(--space-md) 0;">
+            <li>Professionals and executives who value discretion</li>
+            <li>Entrepreneurs and business owners</li>
+            <li>Individuals navigating a significant life transition</li>
+            <li>People who are simply done with apps and want a more considered approach</li>
+          </ul>
+          <div class="who-note">
+            <p>If you are looking for something casual, or if you are not yet sure what you want, this is probably not the right service for you — and we will tell you that honestly. <em>We would rather be direct now than waste your time or ours.</em></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Bar -->
+  <TrustBar />
+
+  <SectionDivider />
+
+  <!-- Advisor Preview -->
+  <section class="advisor-preview bg-white">
+    <div class="container">
+      <div class="advisor-preview-grid">
+        <div class="advisor-preview-text">
+          <span class="eyebrow">Your Advisor</span>
+          <h2 class="section-title">Every Introduction Begins With a Person, Not an Algorithm</h2>
+          <span class="gold-rule" role="presentation"></span>
+          <p>Executive Dating is not a platform. It is a person.</p>
+          <p>Every enquiry, every introduction, and every conversation passes through one trusted individual — your Personal Relationship Advisor — who reviews your application, meets with you over coffee, and remains with you throughout your membership.</p>
+          <p>This is not a business designed to scale. It is designed to work.</p>
+          <a href="/meet-your-advisor" class="btn btn-primary" style="margin-top: var(--space-lg);">Meet Your Advisor</a>
+        </div>
+        <div class="advisor-preview-image">
+          <ImagePlaceholder
+            src="/images/placeholder-coffee.svg"
+            alt="Coffee meeting — warm, relaxed introduction"
+            style="height: 460px;"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <SectionDivider color="turq" />
+
+  <!-- Membership -->
+  <section class="membership-section bg-gold-tint">
+    <div class="container">
+      <div class="text-center" style="margin-bottom: var(--space-2xl);">
+        <span class="eyebrow">Membership</span>
+        <h2 class="section-title">An Introduction Service You Pay for After Acceptance</h2>
+        <span class="gold-rule gold-rule-center" role="presentation"></span>
+        <p class="section-subtitle" style="margin: 0 auto;">There are no upfront fees. No payment is required to enquire, and none to attend your coffee meeting. Membership is offered only to accepted applicants — and only if you choose to proceed.</p>
+      </div>
+      <MembershipCard />
+    </div>
+  </section>
+
+  <SectionDivider />
+
+  <!-- Testimonials -->
+  <section class="testimonials-section bg-cream">
+    <div class="container">
+      <div class="text-center" style="margin-bottom: var(--space-2xl);">
+        <span class="eyebrow">Member Voices</span>
+        <h2 class="section-title">What Our Members Say</h2>
+        <span class="gold-rule gold-rule-center" role="presentation"></span>
+      </div>
+      <div class="testimonials-grid">
+        {[
+          { quote: "I had lost faith in the idea of meeting someone meaningful. The process here felt entirely different — considered, respectful, and genuinely personal.", person: "J.M., Sandton" },
+          { quote: "I appreciated that I wasn't just handed a list of profiles. My advisor took the time to understand what I actually needed.", person: "T.R., Pretoria" },
+          { quote: "The coffee meeting was the moment I knew this was different. No pressure, no sales pitch — just a real conversation.", person: "A.K., Midrand" },
+        ].map(t => (
+          <div class="testimonial-card">
+            <div class="testimonial-quote-mark" aria-hidden="true">"</div>
+            <blockquote class="testimonial-text">{t.quote}</blockquote>
+            <cite class="testimonial-cite">— {t.person}</cite>
+          </div>
+        ))}
+      </div>
+      <p class="testimonials-disclaimer">Testimonials have been anonymised to protect member privacy.</p>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <CTABlock
+    heading="Ready to Take the First Step?"
+    body="Submit a confidential enquiry. There is no commitment, no fee, and no pressure at this stage. Simply tell us a little about yourself, and we will take it from there."
+    primaryLabel="Enquire Now"
+    bg="dark"
+  />
+
+</BaseLayout>
+
+<style>
+/* What section */
+.what-grid, .who-grid, .advisor-preview-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2xl);
+  align-items: center;
+}
+
+.what-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-top: var(--space-xl);
+}
+
+/* HIW section */
+.hiw-layout {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: var(--space-3xl);
+  align-items: start;
+}
+
+.hiw-header {
+  position: sticky;
+  top: 100px;
+}
+
+/* Who section */
+.who-note {
+  background: var(--color-turq-tint);
+  border-left: 3px solid var(--color-turq);
+  padding: var(--space-md) var(--space-lg);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  margin-top: var(--space-md);
+}
+
+.who-note p {
+  font-size: var(--text-base);
+  margin: 0;
+  max-width: none;
+}
+
+/* Testimonials */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+  margin-bottom: var(--space-md);
+}
+
+.testimonial-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-xl);
+  position: relative;
+}
+
+.testimonial-quote-mark {
+  font-family: var(--font-heading);
+  font-size: 4rem;
+  line-height: 1;
+  color: var(--color-gold-light);
+  position: absolute;
+  top: 1rem;
+  left: 1.5rem;
+  font-style: italic;
+}
+
+.testimonial-text {
+  font-family: var(--font-accent);
+  font-size: var(--text-lg);
+  font-style: italic;
+  color: var(--color-text);
+  line-height: 1.65;
+  margin: var(--space-md) 0 var(--space-sm);
+  padding-top: var(--space-sm);
+}
+
+.testimonial-cite {
+  font-size: var(--text-sm);
+  font-style: normal;
+  font-weight: 700;
+  color: var(--color-text-light);
+  letter-spacing: 0.06em;
+}
+
+.testimonials-disclaimer {
+  text-align: center;
+  font-size: var(--text-sm);
+  color: var(--color-text-light);
+  font-style: italic;
+  margin: var(--space-sm) 0 0;
+  max-width: none;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .hiw-layout { grid-template-columns: 1fr; }
+  .hiw-header { position: static; }
+}
+
+@media (max-width: 768px) {
+  .what-grid, .who-grid, .advisor-preview-grid {
+    grid-template-columns: 1fr;
+  }
+  .who-image { order: -1; }
+  .testimonials-grid { grid-template-columns: 1fr; }
+  .what-actions { flex-direction: column; }
+}
+</style>

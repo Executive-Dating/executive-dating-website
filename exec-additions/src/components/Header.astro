@@ -1,0 +1,274 @@
+---
+/**
+ * UPDATED Header.astro — adds Membership to navigation
+ * Replace your existing src/components/Header.astro with this file.
+ * Only change: added { href: '/membership', label: 'Membership' }
+ * between 'How It Works' and 'Meet Your Advisor'.
+ */
+
+const navLinks = [
+  { href: '/how-it-works',       label: 'How It Works' },
+  { href: '/meet-your-advisor',  label: 'Meet Your Advisor' },
+  { href: '/membership',         label: 'Membership' },
+  { href: '/faq',                label: 'FAQ' },
+  { href: '/blog',               label: 'Insights' },
+  { href: '/enquire',            label: 'Enquire', cta: true },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="site-header" id="site-header">
+  <div class="header-inner container">
+
+    <!-- Logo -->
+    <a href="/" class="logo" aria-label="Executive Dating — Home">
+      <span class="logo-main">Executive Dating</span>
+      <span class="logo-sub">Private Introduction Service</span>
+    </a>
+
+    <!-- Desktop Nav -->
+    <nav class="nav-desktop" aria-label="Main navigation">
+      {navLinks.map(link => (
+        <a
+          href={link.href}
+          class={`nav-link ${link.cta ? 'btn btn-primary nav-cta' : ''} ${currentPath === link.href || (link.href === '/blog' && currentPath.startsWith('/blog')) ? 'active' : ''}`}
+        >
+          {link.label}
+        </a>
+      ))}
+    </nav>
+
+    <!-- Mobile toggle -->
+    <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <!-- Mobile Nav -->
+  <nav class="nav-mobile" id="nav-mobile" aria-label="Mobile navigation" hidden>
+    <div class="nav-mobile-inner">
+      {navLinks.map(link => (
+        <a
+          href={link.href}
+          class={`nav-mobile-link ${link.cta ? 'nav-mobile-cta' : ''}`}
+        >
+          {link.label}
+        </a>
+      ))}
+      <a href="https://wa.me/27646286820" class="nav-mobile-whatsapp" target="_blank" rel="noopener noreferrer">
+        💬 WhatsApp
+      </a>
+    </div>
+  </nav>
+</header>
+
+<style>
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(250,247,242,0.97);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--color-border);
+  transition: box-shadow var(--transition);
+}
+
+.site-header.scrolled {
+  box-shadow: var(--shadow-md);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  gap: var(--space-lg);
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.logo-main {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+}
+
+.logo-sub {
+  font-family: var(--font-accent);
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: var(--color-gold);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-top: 0.15rem;
+}
+
+/* Desktop Nav */
+.nav-desktop {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.nav-link {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  letter-spacing: 0.03em;
+  transition: color var(--transition);
+  position: relative;
+  white-space: nowrap;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-gold);
+  transition: width var(--transition);
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.nav-cta {
+  padding: 0.6rem 1.25rem;
+  font-size: 0.8125rem;
+}
+
+.nav-cta::after { display: none; }
+
+/* Mobile toggle */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  margin: -8px;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 26px;
+  height: 2px;
+  background: var(--color-text);
+  border-radius: 2px;
+  transition: all var(--transition);
+}
+
+.nav-toggle[aria-expanded="true"] span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.nav-toggle[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+}
+.nav-toggle[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Mobile nav */
+.nav-mobile {
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+}
+
+.nav-mobile-inner {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-md);
+  gap: 0.25rem;
+}
+
+.nav-mobile-link {
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--color-text);
+  text-decoration: none;
+  padding: 0.9rem 1rem;
+  border-radius: var(--radius-sm);
+  transition: background var(--transition);
+}
+
+.nav-mobile-link:hover {
+  background: var(--color-gold-tint);
+  text-decoration: none;
+}
+
+.nav-mobile-cta {
+  background: var(--color-gold);
+  color: #1A1A1A;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.nav-mobile-whatsapp {
+  display: block;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1EB858;
+  text-decoration: none;
+  padding: 0.9rem 1rem;
+  border-radius: var(--radius-sm);
+  transition: background var(--transition);
+  margin-top: 0.25rem;
+}
+.nav-mobile-whatsapp:hover {
+  background: #f0fff4;
+  text-decoration: none;
+}
+
+@media (max-width: 1050px) {
+  .nav-desktop { display: none; }
+  .nav-toggle { display: flex; }
+}
+</style>
+
+<script>
+  const toggle = document.getElementById('nav-toggle');
+  const mobileNav = document.getElementById('nav-mobile');
+  const header = document.getElementById('site-header');
+
+  toggle?.addEventListener('click', () => {
+    const expanded = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!expanded));
+    mobileNav?.toggleAttribute('hidden');
+  });
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 20) {
+      header?.classList.add('scrolled');
+    } else {
+      header?.classList.remove('scrolled');
+    }
+  }, { passive: true });
+</script>

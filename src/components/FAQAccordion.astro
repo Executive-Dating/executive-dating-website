@@ -1,0 +1,135 @@
+---
+export interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+export interface FAQGroup {
+  group: string;
+  items: FAQItem[];
+}
+
+export interface Props {
+  groups: FAQGroup[];
+}
+
+const { groups } = Astro.props;
+---
+
+<div class="faq-accordion">
+  {groups.map((g, gi) => (
+    <div class="faq-group">
+      <h3 class="faq-group-title">{g.group}</h3>
+      <div class="faq-items">
+        {g.items.map((item, ii) => {
+          const id = `faq-${gi}-${ii}`;
+          return (
+            <div class="faq-item">
+              <button
+                class="faq-question"
+                aria-expanded="false"
+                aria-controls={id}
+                data-faq-toggle
+              >
+                <span>{item.question}</span>
+                <span class="faq-icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-answer" id={id} hidden>
+                <p>{item.answer}</p>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  ))}
+</div>
+
+<style>
+.faq-group {
+  margin-bottom: var(--space-xl);
+}
+
+.faq-group-title {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: var(--space-sm);
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--color-gold-light);
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.faq-question {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-md) 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--color-text);
+  transition: color var(--transition);
+}
+
+.faq-question:hover { color: var(--color-gold-deep); }
+
+.faq-question[aria-expanded="true"] { color: var(--color-gold-deep); }
+
+.faq-icon {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: var(--color-gold);
+  flex-shrink: 0;
+  transition: transform var(--transition);
+  line-height: 1;
+}
+
+.faq-question[aria-expanded="true"] .faq-icon {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  padding-bottom: var(--space-md);
+  overflow: hidden;
+  transition: all var(--transition);
+}
+
+.faq-answer p {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  line-height: 1.78;
+  max-width: none;
+  margin: 0;
+}
+</style>
+
+<script>
+  document.querySelectorAll('[data-faq-toggle]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      const answerId = btn.getAttribute('aria-controls');
+      const answer = document.getElementById(answerId);
+
+      btn.setAttribute('aria-expanded', String(!expanded));
+
+      if (expanded) {
+        answer?.setAttribute('hidden', '');
+      } else {
+        answer?.removeAttribute('hidden');
+      }
+    });
+  });
+</script>

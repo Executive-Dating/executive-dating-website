@@ -1,0 +1,221 @@
+---
+/**
+ * DYNAMIC BLOG TEMPLATE — src/pages/blog/[slug].astro
+ *
+ * HOW TO USE THIS FOR FUTURE ARTICLES:
+ *
+ * 1. Add a new entry to the `articles` array below
+ * 2. Write the content in the `content` field using HTML
+ * 3. Astro will automatically generate /blog/your-slug
+ *
+ * The static pages (executive-dating-south-africa.astro etc.) will
+ * take precedence over this template for existing articles.
+ * Only NEW articles added here will use this template.
+ */
+
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  return articles.map(article => ({
+    params: { slug: article.slug },
+    props: { article },
+  }));
+}
+
+// ─── ADD NEW ARTICLES HERE ────────────────────────────────────────────────────
+const articles = [
+  {
+    slug: 'what-to-expect-from-your-first-advisor-meeting',
+    title: 'What to Expect From Your First Advisor Meeting',
+    description: 'Your first meeting with your matchmaking advisor is not a sales pitch — it is a real conversation. Here is how to prepare, what will be discussed, and what happens next.',
+    publishDate: '2025-04-08',
+    displayDate: '8 April 2025',
+    readTime: '5 min read',
+    tag: 'How It Works',
+    heroImage: '/images/placeholder-coffee.svg',
+    heroAlt: 'First advisor meeting — coffee and conversation',
+    content: `
+      <p class="article-lead">Many people arrive at their first advisor meeting with a mixture of curiosity and uncertainty. They are not sure what to expect, how personal the conversation will become, or how to prepare. The short answer is: come as you are. Bring honesty. Leave the rest to us.</p>
+
+      <h2>This Is Not a Job Interview</h2>
+      <p>The first meeting with your matchmaking advisor is not designed to assess whether you meet a standard. It is designed to understand you — the person behind the application, the life behind the summary, the genuine hopes behind the carefully worded preferences.</p>
+      <p>Your advisor will ask open questions. They will listen carefully. They may ask follow-up questions that feel unexpected. That is not because they are probing for weaknesses — it is because the quality of the introductions that follow will depend entirely on the depth of their understanding of you.</p>
+
+      <h2>What the Conversation Typically Covers</h2>
+      <p>While no two meetings follow an identical path, most advisor conversations explore some version of the following:</p>
+      <p><strong>Your life and circumstances.</strong> Not a CV recitation — but a real sense of how you live, what matters to you, and where you are right now.</p>
+      <p><strong>Your relationship history.</strong> Not as an audit, but as context. What you have learned from past relationships tells your advisor a great deal about what you are ready for now.</p>
+      <p><strong>What you are genuinely looking for.</strong> This is often where the most valuable conversations happen. The gap between what people say they want and what they actually need is frequently significant — and your advisor is skilled at helping you explore it honestly.</p>
+      <p><strong>Your non-negotiables.</strong> Values, lifestyle, family situation, location — the practical things that matter as much as chemistry.</p>
+
+      <h2>How to Prepare</h2>
+      <p>You do not need to prepare a presentation. You do not need to rehearse answers. But it is worth spending a little time before the meeting thinking honestly about what you actually want — not what sounds reasonable, or what you think you should want, but what would genuinely make your life better.</p>
+      <p>The more honest you can be in this meeting, the more useful it will be. Your advisor has heard a great deal of life — they are not easily surprised, and they will not judge what you share.</p>
+
+      <h2>What Happens After</h2>
+      <p>Following your meeting, your advisor will consider whether to extend a formal membership invitation. If they do, the membership terms will be discussed openly at that point — no surprises, no pressure.</p>
+      <p>If they feel the service is not the right fit for you at this time, they will tell you honestly and respectfully. That feedback is itself valuable.</p>
+    `,
+  },
+  // Add more articles here following the same structure
+];
+// ─── END ARTICLES ──────────────────────────────────────────────────────────────
+
+const { article } = Astro.props;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": article.title,
+  "description": article.description,
+  "datePublished": article.publishDate,
+  "author": {
+    "@type": "Person",
+    "name": "Your Advisor",
+    "worksFor": { "@type": "Organization", "name": "Executive Dating" }
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Executive Dating",
+    "url": "https://executivedating.co.za"
+  },
+  "mainEntityOfPage": `https://executivedating.co.za/blog/${article.slug}`
+};
+
+// All other articles for sidebar
+const otherArticles = articles.filter(a => a.slug !== article.slug).slice(0, 3);
+---
+
+<BaseLayout title={`${article.title} | Executive Dating`} description={article.description}>
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+  <div class="article-hero bg-warm">
+    <div class="container-narrow">
+      <div class="article-breadcrumb">
+        <a href="/blog">Insights</a>
+        <span aria-hidden="true"> / </span>
+        <span>{article.tag}</span>
+      </div>
+      <span class="eyebrow">{article.tag}</span>
+      <h1>{article.title}</h1>
+      <span class="gold-rule" role="presentation"></span>
+      <div class="article-meta">
+        <span class="article-author">By Your Advisor</span>
+        <span class="meta-sep" aria-hidden="true">·</span>
+        <time datetime={article.publishDate}>{article.displayDate}</time>
+        <span class="meta-sep" aria-hidden="true">·</span>
+        <span>{article.readTime}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="article-hero-img-wrap">
+    <img
+      src={article.heroImage}
+      alt={article.heroAlt}
+      class="article-hero-img"
+      loading="eager"
+    />
+  </div>
+
+  <div class="article-layout">
+    <div class="container">
+      <div class="article-grid">
+
+        <article class="article-body" set:html={article.content} />
+
+        <aside class="article-sidebar">
+          {otherArticles.length > 0 && (
+            <div class="sidebar-card">
+              <h4>Also in Insights</h4>
+              <nav class="sidebar-links">
+                {otherArticles.map(a => (
+                  <a href={`/blog/${a.slug}`}>{a.title}</a>
+                ))}
+                <a href="/blog/executive-dating-south-africa">Why Executive Dating Is Growing in SA</a>
+                <a href="/blog/why-successful-professionals-use-matchmakers">Why Professionals Choose Matchmakers</a>
+                <a href="/blog/how-professional-matchmaking-works">How Professional Matchmaking Works</a>
+                <a href="/blog/private-dating-service-johannesburg">Private Dating in Johannesburg</a>
+              </nav>
+            </div>
+          )}
+          <div class="sidebar-card sidebar-card--gold">
+            <h4>Take the First Step</h4>
+            <p>No fee. No commitment. A personal response within 2–3 business days.</p>
+            <a href="/enquire" class="btn btn-primary">Enquire Now</a>
+          </div>
+        </aside>
+
+      </div>
+
+      <!-- In-article CTA (appended after dynamic content) -->
+      <div class="article-cta-wrap">
+        <div class="article-cta-block">
+          <span class="gold-rule" role="presentation"></span>
+          <h3>Ready to Enquire?</h3>
+          <p>Submit a confidential enquiry — no fee, no commitment. Your application is reviewed personally by your advisor.</p>
+          <div class="article-cta-btns">
+            <a href="/enquire" class="btn btn-primary">Enquire Confidentially</a>
+            <a href="/how-it-works" class="btn btn-outline-gold">Learn How It Works</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="article-back bg-warm">
+    <div class="container-narrow text-center">
+      <a href="/blog" class="btn btn-outline-gold">← Back to Insights</a>
+    </div>
+  </div>
+
+</BaseLayout>
+
+<style>
+  .article-hero { padding: var(--space-xl) 0 var(--space-lg); border-bottom: 1px solid var(--color-border); }
+  .article-breadcrumb { font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text-light); margin-bottom: var(--space-sm); }
+  .article-breadcrumb a { color: var(--color-gold-deep); text-decoration: none; }
+  .article-hero h1 { font-size: clamp(2rem, 4.5vw, 3.2rem); margin: 0.5rem 0 var(--space-sm); max-width: 22ch; }
+  .article-meta { display: flex; align-items: center; flex-wrap: wrap; gap: 0.5rem; font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text-light); margin-top: var(--space-sm); }
+  .article-author { font-weight: 700; color: var(--color-text-muted); }
+  .meta-sep { opacity: 0.4; }
+  .article-hero-img-wrap { width: 100%; max-height: 480px; overflow: hidden; }
+  .article-hero-img { width: 100%; height: 100%; max-height: 480px; object-fit: cover; }
+  .article-layout { padding: var(--space-3xl) 0 var(--space-xl); background: var(--color-bg); }
+  .article-grid { display: grid; grid-template-columns: 1fr 300px; gap: var(--space-3xl); align-items: start; }
+
+  /* Dynamic content styling */
+  .article-body :global(.article-lead) { font-family: var(--font-accent); font-size: clamp(1.1rem, 2vw, 1.3rem); font-style: italic; line-height: 1.7; color: var(--color-text); border-left: 3px solid var(--color-gold); padding-left: var(--space-lg); margin-bottom: var(--space-xl); }
+  .article-body :global(h2) { font-family: var(--font-heading); font-size: var(--text-2xl); font-weight: 700; color: var(--color-text); margin: var(--space-2xl) 0 var(--space-md); }
+  .article-body :global(p) { font-size: var(--text-base); line-height: 1.82; color: var(--color-text-muted); margin-bottom: var(--space-md); }
+  .article-body :global(strong) { color: var(--color-text); font-weight: 700; }
+  .article-body :global(a) { color: var(--color-gold-deep); }
+
+  .article-cta-wrap { margin-top: var(--space-2xl); max-width: calc(100% - 300px - var(--space-3xl)); }
+  .article-cta-block { background: var(--color-gold-tint); border: 1px solid var(--color-gold-light); border-radius: var(--radius-md); padding: var(--space-xl); }
+  .article-cta-block h3 { font-family: var(--font-heading); font-size: var(--text-2xl); margin: var(--space-sm) 0; }
+  .article-cta-block p { font-size: var(--text-base); margin-bottom: var(--space-lg); max-width: none; }
+  .article-cta-btns { display: flex; flex-wrap: wrap; gap: var(--space-sm); }
+
+  .article-sidebar { position: sticky; top: 100px; display: flex; flex-direction: column; gap: var(--space-lg); }
+  .sidebar-card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--space-lg); }
+  .sidebar-card--gold { background: var(--color-gold-tint); border-color: var(--color-gold-light); display: flex; flex-direction: column; gap: 0.75rem; }
+  .sidebar-card h4 { font-family: var(--font-heading); font-size: var(--text-lg); font-weight: 700; margin-bottom: var(--space-sm); color: var(--color-text); }
+  .sidebar-card p { font-size: var(--text-sm); max-width: none; margin: 0; }
+  .sidebar-links { display: flex; flex-direction: column; gap: 0.6rem; }
+  .sidebar-links a { font-size: var(--text-sm); color: var(--color-text-muted); text-decoration: none; line-height: 1.45; padding: 0.4rem 0; border-bottom: 1px solid var(--color-border); transition: color var(--transition); }
+  .sidebar-links a:last-child { border-bottom: none; }
+  .sidebar-links a:hover { color: var(--color-gold-deep); text-decoration: none; }
+  .sidebar-card .btn { width: 100%; text-align: center; justify-content: center; }
+  .article-back { padding: var(--space-xl) 0; border-top: 1px solid var(--color-border); }
+
+  @media (max-width: 900px) {
+    .article-grid { grid-template-columns: 1fr; }
+    .article-sidebar { position: static; }
+    .article-hero h1 { max-width: none; }
+    .article-cta-wrap { max-width: 100%; }
+    .article-cta-btns { flex-direction: column; }
+  }
+</style>

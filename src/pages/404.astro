@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Page Not Found — Executive Dating"
+  description="The page you are looking for does not exist."
+  hideMobileCTA={true}
+>
+  <div class="notfound-page bg-cream">
+    <div class="container-narrow text-center">
+      <div class="notfound-number" aria-hidden="true">404</div>
+      <span class="eyebrow">Page Not Found</span>
+      <h1>This Page Doesn't Exist</h1>
+      <span class="gold-rule gold-rule-center" role="presentation"></span>
+      <p class="notfound-body">It seems the page you are looking for has moved or no longer exists. Please use the navigation above to find what you need, or return to the homepage.</p>
+      <div class="notfound-actions">
+        <a href="/" class="btn btn-primary">Return to Home</a>
+        <a href="/enquire" class="btn btn-outline-gold">Make an Enquiry</a>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+.notfound-page {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  padding: var(--space-3xl) 0;
+}
+
+.notfound-number {
+  font-family: var(--font-heading);
+  font-size: clamp(5rem, 15vw, 10rem);
+  font-weight: 800;
+  color: var(--color-gold-light);
+  line-height: 1;
+  margin-bottom: var(--space-sm);
+  font-style: italic;
+}
+
+.notfound-body {
+  font-size: var(--text-lg);
+  text-align: center;
+  margin: var(--space-md) auto var(--space-xl);
+  max-width: 50ch;
+}
+
+.notfound-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+</style>

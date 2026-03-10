@@ -1,0 +1,76 @@
+/* ===================================================
+   DESIGN TOKENS — Executive Dating
+   =================================================== */
+
+:root {
+  /* Colour Palette */
+  --color-bg:           #FAF7F2;
+  --color-surface:      #FFFFFF;
+  --color-surface-warm: #F5F0E8;
+
+  --color-gold:         #C9A84C;
+  --color-gold-light:   #E8D5A0;
+  --color-gold-deep:    #A0832E;
+  --color-gold-tint:    #FBF5E6;
+
+  --color-turq:         #3AAFA9;
+  --color-turq-light:   #D0F0EE;
+  --color-turq-deep:    #277A76;
+  --color-turq-tint:    #EAF8F7;
+
+  --color-text:         #1A1A1A;
+  --color-text-muted:   #5C5C5C;
+  --color-text-light:   #8A8A8A;
+  --color-border:       #E0D9CC;
+  --color-border-warm:  #D4C9B4;
+
+  --color-error:        #B94A48;
+  --color-success:      #2F7A52;
+
+  /* Typography */
+  --font-heading:       'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-accent:        'Cormorant Garamond', 'Palatino Linotype', Georgia, serif;
+  --font-body:          'Lato', 'Helvetica Neue', Arial, sans-serif;
+
+  /* Font sizes — fluid */
+  --text-xs:    0.8125rem;   /* 13px */
+  --text-sm:    0.9375rem;   /* 15px */
+  --text-base:  1.125rem;    /* 18px */
+  --text-lg:    1.25rem;     /* 20px */
+  --text-xl:    1.5rem;      /* 24px */
+  --text-2xl:   1.875rem;    /* 30px */
+  --text-3xl:   2.25rem;     /* 36px */
+  --text-4xl:   3rem;        /* 48px */
+  --text-5xl:   clamp(2.5rem, 5vw, 4.5rem);
+  --text-hero:  clamp(3rem, 6.5vw, 5.5rem);
+
+  /* Spacing */
+  --space-xs:   0.5rem;
+  --space-sm:   1rem;
+  --space-md:   1.5rem;
+  --space-lg:   2.5rem;
+  --space-xl:   4rem;
+  --space-2xl:  6rem;
+  --space-3xl:  9rem;
+
+  /* Border radius */
+  --radius-sm:  4px;
+  --radius-md:  8px;
+  --radius-lg:  16px;
+  --radius-xl:  24px;
+
+  /* Shadows */
+  --shadow-sm:  0 2px 8px rgba(0,0,0,0.06);
+  --shadow-md:  0 4px 20px rgba(0,0,0,0.09);
+  --shadow-lg:  0 8px 40px rgba(0,0,0,0.12);
+  --shadow-gold: 0 4px 20px rgba(201,168,76,0.18);
+
+  /* Transitions */
+  --transition: 0.3s ease;
+  --transition-slow: 0.5s ease;
+
+  /* Max widths */
+  --max-width:      1200px;
+  --max-width-text:  780px;
+  --max-width-narrow: 640px;
+}

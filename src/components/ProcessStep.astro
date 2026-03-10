@@ -1,0 +1,70 @@
+---
+export interface Props {
+  number: string;
+  title: string;
+  body: string;
+  accent?: 'gold' | 'turq';
+}
+
+const { number, title, body, accent = 'gold' } = Astro.props;
+---
+
+<div class={`process-step process-step--${accent}`}>
+  <div class="step-number" aria-hidden="true">{number}</div>
+  <div class="step-content">
+    <h3 class="step-title">{title}</h3>
+    <p class="step-body">{body}</p>
+  </div>
+</div>
+
+<style>
+.process-step {
+  display: flex;
+  gap: var(--space-lg);
+  align-items: flex-start;
+  padding: var(--space-lg) 0;
+  border-bottom: 1px solid var(--color-border);
+  transition: transform var(--transition);
+}
+
+.process-step:last-child { border-bottom: none; }
+
+.process-step:hover { transform: translateX(4px); }
+
+.step-number {
+  font-family: var(--font-heading);
+  font-size: clamp(3rem, 5vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1;
+  flex-shrink: 0;
+  width: 80px;
+  text-align: right;
+  opacity: 0.18;
+  color: var(--color-text);
+  font-style: italic;
+}
+
+.process-step--gold .step-number { color: var(--color-gold-deep); opacity: 0.35; }
+.process-step--turq .step-number { color: var(--color-turq-deep); opacity: 0.35; }
+
+.step-content {
+  flex: 1;
+  padding-top: 0.5rem;
+}
+
+.step-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+  color: var(--color-text);
+}
+
+.step-body {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  line-height: 1.75;
+  max-width: 60ch;
+  margin: 0;
+}
+</style>

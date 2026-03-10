@@ -1,0 +1,192 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const article = {
+  title: 'Why Successful Professionals Choose Matchmakers Over Apps',
+  description: 'Dating apps were designed for volume. Matchmaking was designed for people who know what they want. For high-achieving professionals, the difference is not a matter of preference — it is a matter of fit.',
+  publishDate: '2025-02-05',
+  displayDate: '5 February 2025',
+  readTime: '7 min read',
+  tag: 'Matchmaking',
+  slug: 'why-successful-professionals-use-matchmakers',
+};
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": article.title,
+  "description": article.description,
+  "datePublished": article.publishDate,
+  "author": {
+    "@type": "Person",
+    "name": "Your Advisor",
+    "worksFor": { "@type": "Organization", "name": "Executive Dating" }
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Executive Dating",
+    "url": "https://executivedating.co.za"
+  },
+  "mainEntityOfPage": `https://executivedating.co.za/blog/${article.slug}`
+};
+---
+
+<BaseLayout title={`${article.title} | Executive Dating`} description={article.description}>
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+  <div class="article-hero bg-warm">
+    <div class="container-narrow">
+      <div class="article-breadcrumb">
+        <a href="/blog">Insights</a>
+        <span aria-hidden="true"> / </span>
+        <span>{article.tag}</span>
+      </div>
+      <span class="eyebrow">{article.tag}</span>
+      <h1>{article.title}</h1>
+      <span class="gold-rule" role="presentation"></span>
+      <div class="article-meta">
+        <span class="article-author">By Your Advisor</span>
+        <span class="meta-sep" aria-hidden="true">·</span>
+        <time datetime={article.publishDate}>{article.displayDate}</time>
+        <span class="meta-sep" aria-hidden="true">·</span>
+        <span>{article.readTime}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="article-hero-img-wrap">
+    <img
+      src="/images/placeholder-consultation.svg"
+      alt="Professional matchmaking — advisor meeting"
+      class="article-hero-img"
+      loading="eager"
+    />
+  </div>
+
+  <div class="article-layout">
+    <div class="container">
+      <div class="article-grid">
+
+        <article class="article-body">
+
+          <p class="article-lead">Dating apps were designed for volume. The more people using them, the more revenue they generate — regardless of whether anyone actually finds what they are looking for. Matchmaking, by contrast, was designed for an entirely different purpose: to connect two specific people who are genuinely suited to each other. For high-achieving professionals, that distinction is not a matter of preference. It is a matter of fit.</p>
+
+          <h2>The Time Problem</h2>
+
+          <p>The most valuable resource a successful professional has is time. Building a business, leading a team, managing a demanding career — these things consume enormous amounts of it. The idea of spending evenings scrolling profiles, crafting messages into a void, and attending a series of disappointing first meetings is not merely unappealing. For many professionals, it is genuinely unsustainable.</p>
+
+          <p>A matchmaker changes that equation entirely. Instead of outsourcing the process to an algorithm and spending your own time managing the results, you invest a single, meaningful conversation with an advisor who then takes on the work of identifying suitable introductions. The time cost to you is minimal. The quality of what arrives is significantly higher.</p>
+
+          <p>This is not laziness. It is the same principle that drives professionals to work with financial advisors, business coaches, and specialist consultants. When something matters — and finding a life partner is among the things that matter most — working with someone who knows what they are doing makes sense.</p>
+
+          <h2>The Privacy Problem</h2>
+
+          <p>For many senior professionals, appearing on a publicly visible dating app carries risk that is easy to underestimate until it materialises. A client who sees your profile. A colleague who mentions it at the wrong moment. A competitor who uses it to draw conclusions about your personal circumstances.</p>
+
+          <p>The professional world is smaller than it appears, and reputations are built — and damaged — in ways that are rarely predictable. A private matchmaking service, operating entirely outside visible platforms, removes this risk entirely. Your enquiry, your information, and your search for a relationship remain completely confidential.</p>
+
+          <p>This is not paranoia. It is sensible professional conduct applied to a deeply personal area of life.</p>
+
+          <h2>The Quality Problem</h2>
+
+          <p>Dating apps optimise for engagement, not outcomes. Their design — the swipe mechanic, the gamified matching, the notification architecture — is built to keep you on the platform, not to help you leave it with a meaningful relationship.</p>
+
+          <p>The result is that many of the people you encounter on apps are not meaningfully invested in finding a serious, lasting relationship. Some are casually browsing. Some are managing loneliness without genuine readiness for commitment. Some are simply seeking validation. The algorithm cannot distinguish between them and someone who, like you, is genuinely ready for something real.</p>
+
+          <p>A skilled matchmaker can. The screening process that precedes every introduction — the personal conversations, the assessment of emotional readiness, the understanding of what each person genuinely needs rather than simply what they say they want — filters out exactly these mismatches before they cost you anything.</p>
+
+          <h2>The Nuance Problem</h2>
+
+          <p>Algorithms match on data. They can identify shared interests, compatible age ranges, geographic proximity, and lifestyle markers. What they cannot do is understand nuance.</p>
+
+          <p>They cannot sense that two people who look incompatible on paper would in fact recognise something profound in each other. They cannot identify that one person's quiet quality of steadiness is exactly what another's life is missing. They cannot read the space between what someone says and what they actually mean.</p>
+
+          <p>Human judgment — specifically, the judgment of an advisor who has spent real time understanding both people — can do all of these things. The best introductions are not the ones that make obvious sense. They are the ones that someone who knows you well believed in enough to arrange.</p>
+
+          <h2>What Matchmaking Asks of You</h2>
+
+          <p>Choosing a matchmaker over an app does ask something of you that apps do not: honesty. The quality of the introductions you receive will be directly proportional to the quality of your self-awareness and the candour with which you share it with your advisor.</p>
+
+          <p>This is not a difficulty — it is one of the most valuable aspects of the process. Being asked to articulate what you genuinely want, rather than what you think you should want, is often clarifying in itself. Many people arrive at their first advisor conversation believing they know exactly what they are looking for, and leave with a considerably more honest picture.</p>
+
+          <p>That honesty is the foundation on which every introduction is built. It is also, more often than not, the beginning of finding it.</p>
+
+          <div class="article-cta-block">
+            <span class="gold-rule" role="presentation"></span>
+            <h3>Discover the Difference a Human Advisor Makes</h3>
+            <p>Understand exactly how our introduction process works — and what it asks of you.</p>
+            <div class="article-cta-btns">
+              <a href="/how-it-works" class="btn btn-primary">How It Works</a>
+              <a href="/enquire" class="btn btn-outline-gold">Enquire Confidentially</a>
+            </div>
+          </div>
+
+        </article>
+
+        <aside class="article-sidebar">
+          <div class="sidebar-card">
+            <h4>Also in Insights</h4>
+            <nav class="sidebar-links">
+              <a href="/blog/executive-dating-south-africa">Why Executive Dating Is Growing in South Africa</a>
+              <a href="/blog/how-professional-matchmaking-works">How Professional Matchmaking Works</a>
+              <a href="/blog/private-dating-service-johannesburg">Private Dating Services in Johannesburg</a>
+            </nav>
+          </div>
+          <div class="sidebar-card sidebar-card--gold">
+            <h4>Take the First Step</h4>
+            <p>No fee. No commitment. A personal response within 2–3 business days.</p>
+            <a href="/enquire" class="btn btn-primary">Enquire Now</a>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="article-back bg-warm">
+    <div class="container-narrow text-center">
+      <a href="/blog" class="btn btn-outline-gold">← Back to Insights</a>
+    </div>
+  </div>
+
+</BaseLayout>
+
+<style>
+  .article-hero { padding: var(--space-xl) 0 var(--space-lg); border-bottom: 1px solid var(--color-border); }
+  .article-breadcrumb { font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text-light); margin-bottom: var(--space-sm); }
+  .article-breadcrumb a { color: var(--color-gold-deep); text-decoration: none; }
+  .article-hero h1 { font-size: clamp(2rem, 4.5vw, 3.2rem); margin: 0.5rem 0 var(--space-sm); max-width: 20ch; }
+  .article-meta { display: flex; align-items: center; flex-wrap: wrap; gap: 0.5rem; font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text-light); margin-top: var(--space-sm); }
+  .article-author { font-weight: 700; color: var(--color-text-muted); }
+  .meta-sep { opacity: 0.4; }
+  .article-hero-img-wrap { width: 100%; max-height: 480px; overflow: hidden; }
+  .article-hero-img { width: 100%; height: 100%; max-height: 480px; object-fit: cover; }
+  .article-layout { padding: var(--space-3xl) 0; background: var(--color-bg); }
+  .article-grid { display: grid; grid-template-columns: 1fr 300px; gap: var(--space-3xl); align-items: start; }
+  .article-lead { font-family: var(--font-accent); font-size: clamp(1.1rem, 2vw, 1.3rem); font-style: italic; line-height: 1.7; color: var(--color-text); border-left: 3px solid var(--color-gold); padding-left: var(--space-lg); margin-bottom: var(--space-xl); max-width: none; }
+  .article-body h2 { font-family: var(--font-heading); font-size: var(--text-2xl); font-weight: 700; color: var(--color-text); margin: var(--space-2xl) 0 var(--space-md); }
+  .article-body p { font-size: var(--text-base); line-height: 1.82; color: var(--color-text-muted); margin-bottom: var(--space-md); max-width: none; }
+  .article-body strong { color: var(--color-text); font-weight: 700; }
+  .article-cta-block { background: var(--color-gold-tint); border: 1px solid var(--color-gold-light); border-radius: var(--radius-md); padding: var(--space-xl); margin-top: var(--space-2xl); }
+  .article-cta-block h3 { font-family: var(--font-heading); font-size: var(--text-2xl); margin: var(--space-sm) 0; }
+  .article-cta-block p { font-size: var(--text-base); margin-bottom: var(--space-lg); }
+  .article-cta-btns { display: flex; flex-wrap: wrap; gap: var(--space-sm); }
+  .article-sidebar { position: sticky; top: 100px; display: flex; flex-direction: column; gap: var(--space-lg); }
+  .sidebar-card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--space-lg); }
+  .sidebar-card--gold { background: var(--color-gold-tint); border-color: var(--color-gold-light); display: flex; flex-direction: column; gap: 0.75rem; }
+  .sidebar-card h4 { font-family: var(--font-heading); font-size: var(--text-lg); font-weight: 700; margin-bottom: var(--space-sm); color: var(--color-text); }
+  .sidebar-card p { font-size: var(--text-sm); max-width: none; margin: 0; }
+  .sidebar-links { display: flex; flex-direction: column; gap: 0.6rem; }
+  .sidebar-links a { font-size: var(--text-sm); color: var(--color-text-muted); text-decoration: none; line-height: 1.45; padding: 0.4rem 0; border-bottom: 1px solid var(--color-border); transition: color var(--transition); }
+  .sidebar-links a:last-child { border-bottom: none; }
+  .sidebar-links a:hover { color: var(--color-gold-deep); text-decoration: none; }
+  .sidebar-card .btn { width: 100%; text-align: center; justify-content: center; }
+  .article-back { padding: var(--space-xl) 0; border-top: 1px solid var(--color-border); }
+  @media (max-width: 900px) {
+    .article-grid { grid-template-columns: 1fr; }
+    .article-sidebar { position: static; }
+    .article-hero h1 { max-width: none; }
+    .article-cta-btns { flex-direction: column; }
+  }
+</style>

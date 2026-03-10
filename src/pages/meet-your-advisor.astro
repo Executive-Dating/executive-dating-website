@@ -1,0 +1,232 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTABlock from '../components/CTABlock.astro';
+import ImagePlaceholder from '../components/ImagePlaceholder.astro';
+import SectionDivider from '../components/SectionDivider.astro';
+---
+
+<BaseLayout
+  title="Meet Your Personal Relationship Advisor — Executive Dating"
+  description="Your advisor reviews every enquiry personally and guides every introduction. Learn about the person behind the service — and why human-led introductions matter."
+>
+
+  <!-- Page Hero -->
+  <div class="advisor-hero bg-warm">
+    <div class="container-narrow text-center">
+      <span class="eyebrow">Your Advisor</span>
+      <h1>Meet Your Personal Relationship Advisor</h1>
+      <span class="gold-rule gold-rule-center" role="presentation"></span>
+      <p class="advisor-hero-intro">Executive Dating is not a platform. It is a person. Every enquiry you submit, every introduction arranged, and every conversation you have will involve one trusted individual.</p>
+    </div>
+  </div>
+
+  <!-- Advisor Bio -->
+  <section class="advisor-bio bg-cream">
+    <div class="container">
+      <div class="advisor-grid">
+        <div class="advisor-portrait-col">
+          <ImagePlaceholder
+            src="/images/placeholder-advisor.svg"
+            alt="Your Personal Relationship Advisor — portrait placeholder"
+            style="height: 580px; border-radius: var(--radius-lg);"
+          />
+          <div class="advisor-contact-card">
+            <h4>Get in Touch</h4>
+            <p>You are welcome to reach out before submitting a formal enquiry.</p>
+            <a href="https://wa.me/27646286820" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
+              💬 WhatsApp
+            </a>
+            <a href="mailto:executivedating08@gmail.com" class="btn btn-outline-gold">
+              ✉ Email
+            </a>
+          </div>
+        </div>
+
+        <div class="advisor-bio-col">
+          <span class="eyebrow">Your Advisor</span>
+          <!-- REPLACE THIS SECTION WITH REAL BIO -->
+          <h2 class="section-title">Chris</h2>
+          <span class="gold-rule" role="presentation"></span>
+
+          <div class="advisor-bio-text">
+            <p>I started Executive Dating because I kept watching intelligent, accomplished, warm people struggle to find meaningful connections through apps that reduced them to a profile picture and a bio.</p>
+
+            <p>I have spent years working in relationship guidance and personal advisory. I have worked with people navigating divorce, career transitions, life reinvention, and the simple, universal desire to find someone to build a life with.</p>
+
+            <p>My approach is unhurried. I take the time to understand who you really are — not just what you say you want, but what you actually need. I then apply that understanding to every introduction I make.</p>
+
+            <p>I review every enquiry personally. I meet every applicant for coffee before accepting them. And I remain genuinely invested in your experience throughout your membership.</p>
+
+            <p><strong>This is not a business designed to scale. It is designed to work.</strong></p>
+          </div>
+          <!-- END REAL BIO SECTION -->
+
+          <div class="advisor-attributes">
+            {[
+              'Gauteng-based, with a focus on Johannesburg and Pretoria',
+              'Personally reviews every enquiry — no staff, no automation',
+              'Meets every applicant for coffee before acceptance',
+              'Maintains strict confidentiality for all members',
+            ].map(attr => (
+              <div class="advisor-attr">
+                <span class="attr-dot" aria-hidden="true">◆</span>
+                <span>{attr}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <SectionDivider />
+
+  <!-- Philosophy -->
+  <section class="philosophy-section bg-white">
+    <div class="container">
+      <div class="philosophy-grid">
+        <div>
+          <span class="eyebrow">The Philosophy</span>
+          <h2 class="section-title">Why Human-Led Introductions Matter</h2>
+          <span class="gold-rule" role="presentation"></span>
+          <p>Algorithms are good at pattern recognition. They are not good at understanding nuance, emotional readiness, life context, or the quiet qualities that make two people genuinely compatible.</p>
+          <p>A good introduction requires more than shared interests and compatible age ranges. It requires judgement, experience, and care.</p>
+          <p>That is what your advisor offers — and why every introduction made through Executive Dating is preceded by a real relationship between advisor and member.</p>
+        </div>
+        <div>
+          <span class="eyebrow">What to Expect</span>
+          <h2 class="section-title" style="font-size: var(--text-2xl);">What You Can Expect From Your Advisor</h2>
+          <span class="gold-rule" role="presentation"></span>
+          <ul class="styled-list">
+            <li>Your application will be read carefully and responded to personally</li>
+            <li>Honesty about whether the service is a good fit for you</li>
+            <li>An unhurried approach — introductions are never rushed</li>
+            <li>Complete confidentiality — your details are never shared without your consent</li>
+            <li>Respect for your story, your history, and your hopes</li>
+            <li>Ongoing availability throughout your membership</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <SectionDivider color="turq" />
+
+  <!-- Pre-Enquiry Contact -->
+  <section class="pre-enquiry bg-turq-tint section-sm">
+    <div class="container-narrow text-center">
+      <span class="eyebrow">Before You Enquire</span>
+      <h2 class="section-title">Have a Question First?</h2>
+      <span class="gold-rule gold-rule-center" role="presentation"></span>
+      <p class="section-subtitle" style="margin: 0 auto var(--space-xl);">You are welcome to reach out directly on WhatsApp before submitting a formal enquiry. There is no commitment in asking a question.</p>
+      <div class="cta-buttons" style="justify-content: center; display: flex; flex-wrap: wrap; gap: var(--space-sm);">
+        <a href="https://wa.me/27646286820" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
+          💬 WhatsApp Your Advisor
+        </a>
+        <a href="/enquire" class="btn btn-primary">Submit an Enquiry</a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+.advisor-hero {
+  padding: var(--space-2xl) 0 var(--space-xl);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.advisor-hero-intro {
+  font-size: var(--text-lg);
+  max-width: 55ch;
+  margin: var(--space-md) auto 0;
+  text-align: center;
+}
+
+.advisor-grid {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  gap: var(--space-3xl);
+  align-items: start;
+}
+
+.advisor-portrait-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  position: sticky;
+  top: 100px;
+}
+
+.advisor-contact-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.advisor-contact-card h4 {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  margin-bottom: 0.25rem;
+}
+
+.advisor-contact-card p {
+  font-size: var(--text-sm);
+  max-width: none;
+  margin: 0;
+}
+
+.advisor-contact-card .btn {
+  text-align: center;
+  justify-content: center;
+}
+
+.advisor-bio-text p {
+  font-size: var(--text-base);
+  line-height: 1.8;
+  margin-bottom: var(--space-sm);
+}
+
+.advisor-attributes {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: var(--space-xl);
+  background: var(--color-gold-tint);
+  border: 1px solid var(--color-gold-light);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+}
+
+.advisor-attr {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+}
+
+.attr-dot {
+  color: var(--color-gold);
+  font-size: 0.6rem;
+  margin-top: 0.5rem;
+  flex-shrink: 0;
+}
+
+.philosophy-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3xl);
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .advisor-grid { grid-template-columns: 1fr; }
+  .advisor-portrait-col { position: static; }
+  .philosophy-grid { grid-template-columns: 1fr; }
+}
+</style>

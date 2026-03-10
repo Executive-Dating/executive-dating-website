@@ -1,0 +1,114 @@
+---
+const pillars = [
+  {
+    icon: '🔒',
+    title: 'Complete Discretion',
+    body: 'Your information is never shared without your consent. We operate under POPIA and treat your privacy with the highest care.'
+  },
+  {
+    icon: '👤',
+    title: 'Human-Led, Always',
+    body: 'No bots. No automated matching. Every introduction is considered by a real person who knows both parties.'
+  },
+  {
+    icon: '☕',
+    title: 'No Commitment Until Coffee',
+    body: 'You pay nothing until after your coffee meeting and formal acceptance. Trust must be earned before money changes hands.'
+  },
+  {
+    icon: '✓',
+    title: 'The Right to Say No',
+    body: 'We reserve the right to decline any application. This protects the quality of the service and every member\'s experience.'
+  }
+];
+---
+
+<section class="trust-bar bg-warm section-sm">
+  <div class="container">
+    <div class="text-center" style="margin-bottom: var(--space-2xl);">
+      <span class="eyebrow">Why Our Members Trust Us</span>
+      <h2 class="section-title">Built on Discretion and Respect</h2>
+      <span class="gold-rule gold-rule-center" role="presentation"></span>
+    </div>
+
+    <div class="trust-grid">
+      {pillars.map(p => (
+        <div class="trust-card">
+          <div class="trust-icon" aria-hidden="true">{p.icon}</div>
+          <h3 class="trust-title">{p.title}</h3>
+          <p>{p.body}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+}
+
+.trust-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-xl) var(--space-lg);
+  text-align: center;
+  transition: transform var(--transition), box-shadow var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.trust-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--color-gold);
+  transform: scaleX(0);
+  transition: transform var(--transition);
+}
+
+.trust-card:hover::before {
+  transform: scaleX(1);
+}
+
+.trust-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.trust-icon {
+  font-size: 2.25rem;
+  margin-bottom: var(--space-sm);
+  display: block;
+}
+
+.trust-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  margin-bottom: var(--space-sm);
+  color: var(--color-text);
+}
+
+.trust-card p {
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  margin: 0 auto;
+  max-width: 28ch;
+}
+
+@media (max-width: 1024px) {
+  .trust-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .trust-grid { grid-template-columns: 1fr; }
+  .trust-card p { max-width: none; }
+}
+</style>

@@ -1,0 +1,117 @@
+---
+const steps = [
+  {
+    number: '01',
+    title: 'You Enquire',
+    body: 'Submit a confidential enquiry online, by email, or via WhatsApp. Tell us a little about yourself and what you are looking for. There is no commitment and no fee at this stage.'
+  },
+  {
+    number: '02',
+    title: 'We Review Personally',
+    body: 'Your advisor reads every enquiry individually. No algorithms. No automation. If your application looks like a genuine fit, you will hear from us directly.'
+  },
+  {
+    number: '03',
+    title: 'Coffee First',
+    body: 'Suitable applicants are invited to meet their advisor for coffee — a relaxed, private conversation to understand you better before any commitment is made.'
+  },
+  {
+    number: '04',
+    title: 'Accepted Members Join',
+    body: 'If both parties are satisfied, you are invited to become a member. Only at this point does the membership fee of R5,500 apply. There are no surprises.'
+  },
+  {
+    number: '05',
+    title: 'Curated Introductions Begin',
+    body: 'Your advisor begins the careful, considered process of identifying introductions suited to who you are and what you are genuinely seeking.'
+  },
+];
+---
+
+<div class="hiw-steps">
+  {steps.map((step, i) => (
+    <div class="hiw-step" style={`animation-delay: ${i * 0.1}s`}>
+      <div class="hiw-number" aria-hidden="true">{step.number}</div>
+      <div class="hiw-content">
+        <h3 class="hiw-title">{step.title}</h3>
+        <p class="hiw-body">{step.body}</p>
+      </div>
+    </div>
+  ))}
+</div>
+
+<style>
+.hiw-steps {
+  position: relative;
+}
+
+.hiw-steps::before {
+  content: '';
+  position: absolute;
+  left: 38px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(to bottom, var(--color-gold), var(--color-turq), transparent);
+  opacity: 0.3;
+}
+
+.hiw-step {
+  display: flex;
+  gap: var(--space-lg);
+  align-items: flex-start;
+  padding: var(--space-lg) 0;
+  position: relative;
+}
+
+.hiw-step + .hiw-step { border-top: 1px solid var(--color-border); }
+
+.hiw-number {
+  font-family: var(--font-accent);
+  font-size: 1.125rem;
+  font-weight: 600;
+  font-style: italic;
+  color: var(--color-gold);
+  flex-shrink: 0;
+  width: 76px;
+  height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid var(--color-gold-light);
+  border-radius: 50%;
+  background: var(--color-gold-tint);
+  position: relative;
+  z-index: 1;
+}
+
+.hiw-content {
+  flex: 1;
+  padding-top: 0.75rem;
+}
+
+.hiw-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--color-text);
+}
+
+.hiw-body {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  line-height: 1.75;
+  max-width: 62ch;
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .hiw-steps::before { left: 30px; }
+  .hiw-number {
+    width: 60px;
+    height: 60px;
+    font-size: 1rem;
+  }
+}
+</style>

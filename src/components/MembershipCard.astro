@@ -1,0 +1,139 @@
+---
+const includes = [
+  'Personal advisor relationship throughout your membership',
+  'Carefully curated introductions, one at a time',
+  'You are consulted before every introduction',
+  'Ongoing support and guidance from your advisor',
+  'Full discretion and POPIA-compliant privacy protection',
+  'No automatic renewal — entirely your decision',
+];
+---
+
+<div class="membership-card">
+  <div class="membership-badge">
+    <span class="badge badge-gold">Membership by Invitation Only</span>
+  </div>
+
+  <div class="membership-name">
+    <span class="eyebrow">Executive Membership</span>
+    <div class="membership-price">
+      <span class="price-amount">R5,500</span>
+      <span class="price-period">for 12 months</span>
+    </div>
+    <span class="gold-rule" role="presentation"></span>
+  </div>
+
+  <ul class="membership-includes" role="list">
+    {includes.map(item => (
+      <li>
+        <span class="check-icon" aria-hidden="true">◆</span>
+        <span>{item}</span>
+      </li>
+    ))}
+  </ul>
+
+  <div class="membership-note">
+    <p>The membership fee is discussed openly during your coffee meeting. There are no hidden fees and no automatic renewals.</p>
+  </div>
+
+  <a href="/enquire" class="btn btn-primary membership-cta">Begin Your Enquiry</a>
+</div>
+
+<style>
+.membership-card {
+  background: var(--color-surface);
+  border: 1.5px solid var(--color-gold-light);
+  border-radius: var(--radius-lg);
+  padding: var(--space-2xl);
+  box-shadow: var(--shadow-gold);
+  max-width: 560px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.membership-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(to right, var(--color-gold), var(--color-turq));
+}
+
+.membership-badge {
+  margin-bottom: var(--space-lg);
+}
+
+.membership-name {
+  margin-bottom: var(--space-lg);
+}
+
+.membership-price {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin: 0.5rem 0 var(--space-sm);
+}
+
+.price-amount {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 800;
+  color: var(--color-text);
+  line-height: 1;
+}
+
+.price-period {
+  font-family: var(--font-accent);
+  font-size: var(--text-lg);
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+.membership-includes {
+  list-style: none;
+  padding: 0;
+  margin-bottom: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.membership-includes li {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  line-height: 1.55;
+}
+
+.check-icon {
+  color: var(--color-gold);
+  font-size: 0.6rem;
+  flex-shrink: 0;
+  margin-top: 0.45rem;
+}
+
+.membership-note {
+  background: var(--color-gold-tint);
+  border-radius: var(--radius-sm);
+  padding: var(--space-sm) var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+.membership-note p {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin: 0;
+  max-width: none;
+}
+
+.membership-cta {
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+}
+</style>
