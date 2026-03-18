@@ -174,7 +174,7 @@ const faqs = [
               type="button"
               aria-haspopup="dialog"
             >
-              Enquire About Membership
+               Enquire Now
             </button>
             <p class="pricing-note">Payment is only required after acceptance. <a href="/terms">Terms apply.</a></p>
           </div>
@@ -345,7 +345,7 @@ const faqs = [
     <div class="mem-modal">
       <button class="mem-modal-close" id="mem-modal-close" aria-label="Close">✕</button>
       <span class="eyebrow">Get in Touch</span>
-      <h3>Ready to Enquire About Membership?</h3>
+      <h3>Ready to Enquire Now?</h3>
       <span class="gold-rule" role="presentation"></span>
       <p>Choose how you'd like to reach your advisor. There is no commitment at this stage.</p>
       <div class="mem-modal-options">
@@ -469,7 +469,37 @@ const faqs = [
 .pricing-includes li { display: flex; gap: 0.7rem; align-items: flex-start; font-size: var(--text-base); color: var(--color-text-muted); line-height: 1.5; }
 .pi-dot { color: var(--color-gold); font-size: 0.55rem; flex-shrink: 0; margin-top: 0.5rem; }
 
-.pricing-cta { width: 100%; text-align: center; justify-content: center; margin-bottom: var(--space-sm); }
+.pricing-cta {
+  width: 100%;
+  max-width: 340px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  text-align: .pricing-cta {
+  display: flex;
+  width: 100%;
+  max-width: 100%;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem 2rem;
+  min-height: 64px;
+  line-height: 1.2;
+  white-space: normal;
+  word-break: normal;
+  overflow-wrap: anywhere;
+  margin: 0 auto var(--space-sm);
+  box-sizing: border-box;
+  font-size: 1.05rem;
+}center;
+  padding: 0.95rem 1.6rem;
+  min-height: 60px;
+  line-height: 1.2;
+  white-space: nowrap;
+  margin: 0 auto var(--space-sm);
+  box-sizing: border-box;
+}
 .pricing-note { font-size: var(--text-sm); color: var(--color-text-light); text-align: center; margin: 0; max-width: none; }
 .pricing-note a { color: var(--color-gold-deep); }
 
