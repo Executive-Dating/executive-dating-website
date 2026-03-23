@@ -51,9 +51,9 @@ const faqs = [
     q: 'Can I get a refund after paying?',
     a: 'Membership fees are generally non-refundable once membership has been accepted and the introduction process has begun. This is discussed openly during your coffee meeting before any commitment is made. Please read our Terms and Conditions for full details.',
   },
-  {
-    q: 'What is the payment reference I should use for EFT?',
-    a: 'Please use your full name as the payment reference so we can match your payment to your application.',
+    {
+    q: 'How will I receive the payment details?',
+    a: 'Once your membership application has been accepted, you will receive an official invoice with the membership amount, banking details, and payment reference instructions.',
   },
 ];
 ---
@@ -545,30 +545,6 @@ const faqs = [
 .payment-card-header h3 { font-family: var(--font-heading); font-size: var(--text-xl); font-weight: 700; margin-bottom: 0.5rem; }
 .payment-card-header p { font-size: var(--text-sm); color: var(--color-text-muted); margin: 0; max-width: none; }
 
-/* EFT details */
-.payment-eft-details {
-  background: var(--color-bg);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
-  overflow: hidden;
-}
-.eft-row {
-  display: flex;
-  justify-content: space-between;
-  padding: 0.65rem var(--space-md);
-  border-bottom: 1px solid var(--color-border);
-  gap: var(--space-md);
-}
-.eft-row:last-child { border-bottom: none; }
-.eft-label { font-size: var(--text-sm); font-weight: 700; color: var(--color-text-muted); flex-shrink: 0; }
-.eft-value { font-size: var(--text-sm); color: var(--color-text); text-align: right; }
-.eft-ref { font-weight: 700; color: var(--color-gold-deep); }
-
-.eft-note p { font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.6; margin: 0; max-width: none; }
-.payment-soon-note p { font-size: var(--text-sm); color: var(--color-text-muted); max-width: none; margin: 0; }
-
-.payment-card .btn { width: 100%; text-align: center; justify-content: center; margin-top: auto; }
-.payment-card .btn[disabled] { opacity: 0.45; cursor: not-allowed; pointer-events: none; }
 
 /* Benefits */
 .benefits-grid {

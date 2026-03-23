@@ -189,33 +189,42 @@ const faqs = [
     <div class="container">
       <div class="text-center" style="margin-bottom: var(--space-2xl);">
         <span class="eyebrow">Payment</span>
-        <h2 class="section-title">How to Pay Your Membership Fee</h2>
+        <h2 class="section-title">How Membership Payment Works</h2>
         <span class="gold-rule gold-rule-center" role="presentation"></span>
-        <p class="section-subtitle" style="margin: 0 auto;">After your coffee meeting and formal acceptance, your advisor will confirm the payment details below.</p>
+        <p class="section-subtitle" style="margin: 0 auto;">After your coffee meeting and formal acceptance, your advisor will issue your invoice and provide the relevant payment details privately.</p>
       </div>
 
       <div class="payment-layout">
 
-        <!-- EFT Card — PRIMARY / LIVE -->
+        <!-- Private Invoice Card — PRIMARY / LIVE -->
         <div class="payment-card payment-card--primary">
           <div class="payment-card-header">
             <span class="payment-live-badge">Available Now</span>
             <div class="payment-icon" aria-hidden="true">🏦</div>
-            <h3>EFT Bank Transfer</h3>
-            <p>Secure, direct bank-to-bank payment. Preferred method for membership fees.</p>
+            <h3>Private Payment by Invoice</h3>
+            <p>
+              Payment details are provided privately once your membership application
+              has been reviewed and approved.
+            </p>
           </div>
-          <div class="payment-eft-details">
-            <div class="eft-row"><span class="eft-label">Bank</span><span class="eft-value">FNB</span></div>
-            <div class="eft-row"><span class="eft-label">Account Name</span><span class="eft-value">Executive Dating</span></div>
-            <div class="eft-row"><span class="eft-label">Account Number</span><span class="eft-value">[Add your account number]</span></div>
-            <div class="eft-row"><span class="eft-label">Branch Code</span><span class="eft-value">[Add your branch code]</span></div>
-            <div class="eft-row"><span class="eft-label">Reference</span><span class="eft-value eft-ref">Your full name</span></div>
+
+          <div class="payment-soon-note">
+            <p>
+              Once your membership has been accepted, an official invoice will be
+              issued directly to you.
+            </p>
+            <p>
+              The invoice will include the membership amount, banking details, and
+              payment reference instructions.
+            </p>
+            <p>
+              This approach protects your privacy and ensures every membership is
+              handled personally and discreetly.
+            </p>
           </div>
-          <div class="eft-note">
-            <p>Once payment is made, please WhatsApp or email your proof of payment to confirm. Your membership will be activated within one business day of receipt.</p>
-          </div>
-          <a href="mailto:executivedating08@gmail.com?subject=Proof of Payment — Membership" class="btn btn-primary">
-            Email Proof of Payment
+
+          <a href="/enquire" class="btn btn-gold">
+            Enquire About Membership
           </a>
         </div>
 
@@ -228,7 +237,7 @@ const faqs = [
             <p>Secure online card payment via PayFast. This option will be available soon.</p>
           </div>
           <div class="payment-soon-note">
-            <p>In the meantime, please use EFT or contact us via WhatsApp and we will assist you.</p>
+            <p>In the meantime, please use invoice payment or contact us via WhatsApp and we will assist you.</p>
           </div>
           <button class="btn btn-outline-gold" disabled aria-disabled="true">
             Coming Soon
@@ -254,7 +263,6 @@ const faqs = [
       </div>
     </div>
   </section>
-
   <!-- ── Benefits ──────────────────────────────────── -->
   <section class="mem-benefits bg-white">
     <div class="container">
@@ -515,30 +523,42 @@ const faqs = [
 .payment-card-header h3 { font-family: var(--font-heading); font-size: var(--text-xl); font-weight: 700; margin-bottom: 0.5rem; }
 .payment-card-header p { font-size: var(--text-sm); color: var(--color-text-muted); margin: 0; max-width: none; }
 
-/* EFT details */
-.payment-eft-details {
-  background: var(--color-bg);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
-  overflow: hidden;
-}
-.eft-row {
-  display: flex;
-  justify-content: space-between;
-  padding: 0.65rem var(--space-md);
-  border-bottom: 1px solid var(--color-border);
-  gap: var(--space-md);
-}
-.eft-row:last-child { border-bottom: none; }
-.eft-label { font-size: var(--text-sm); font-weight: 700; color: var(--color-text-muted); flex-shrink: 0; }
-.eft-value { font-size: var(--text-sm); color: var(--color-text); text-align: right; }
-.eft-ref { font-weight: 700; color: var(--color-gold-deep); }
 
-.eft-note p { font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.6; margin: 0; max-width: none; }
 .payment-soon-note p { font-size: var(--text-sm); color: var(--color-text-muted); max-width: none; margin: 0; }
 
-.payment-card .btn { width: 100%; text-align: center; justify-content: center; margin-top: auto; }
-.payment-card .btn[disabled] { opacity: 0.45; cursor: not-allowed; pointer-events: none; }
+.payment-soon-note {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  flex-grow: 1;
+}
+
+.payment-soon-note p {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin: 0;
+  max-width: none;
+}
+
+.payment-card .btn {
+  width: 100%;
+  max-width: 320px;
+  text-align: center;
+  justify-content: center;
+  align-self: center;
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  min-height: 56px;
+  box-sizing: border-box;
+}
+
+.payment-card .btn[disabled] {
+  opacity: 0.45;
+  cursor: not-allowed;
+  pointer-events: none;
+}
 
 /* Benefits */
 .benefits-grid {
