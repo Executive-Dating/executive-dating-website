@@ -5,56 +5,101 @@ export interface Props {
   title: string;
   description: string;
   heading: string;
-  lastUpdated?: string;
-  showAttorneyNotice?: boolean;
 }
 
-const { title, description, heading, lastUpdated, showAttorneyNotice = false } = Astro.props;
+const { title, description, heading } = Astro.props;
 ---
 
 <BaseLayout title={title} description={description} hideMobileCTA={true}>
-  <div class="legal-hero">
+  <section class="legal-hero">
     <div class="container-narrow">
       <span class="eyebrow">Legal &amp; Compliance</span>
       <h1>{heading}</h1>
-      {lastUpdated && <p class="legal-date">Last updated: {lastUpdated}</p>}
     </div>
-  </div>
+  </section>
 
-  <div class="legal-body">
-    <div class="container-narrow">
-      {showAttorneyNotice && (
-        <div class="legal-notice" role="note">
-          <strong>⚠️ Attorney Review Notice:</strong> This document has been prepared as a working draft for informational purposes. It should be reviewed and approved by a qualified South African attorney before final publication and use.
-        </div>
-      )}
-      <div class="legal-content">
-        <slot />
-      </div>
+  <main class="legal-body">
+    <div class="container-narrow legal-content">
+      <slot />
     </div>
-  </div>
+  </main>
 </BaseLayout>
 
 <style>
-.legal-hero {
-  background: var(--color-surface-warm);
-  border-bottom: 1px solid var(--color-border);
-  padding: var(--space-2xl) 0 var(--space-xl);
-}
+  .legal-hero {
+    background: var(--color-surface-warm);
+    border-bottom: 1px solid var(--color-border);
+    padding: var(--space-2xl) 0 var(--space-xl);
+  }
 
-.legal-hero h1 {
-  font-size: clamp(2rem, 4vw, 3rem);
-  margin-top: 0.5rem;
-}
+  .legal-hero h1 {
+    font-size: clamp(2.2rem, 4vw, 3.4rem);
+    line-height: 1.1;
+    margin: 0.5rem 0 0;
+  }
 
-.legal-date {
-  font-size: var(--text-sm);
-  color: var(--color-text-light);
-  margin-top: var(--space-sm);
-  max-width: none;
-}
+  .legal-body {
+    padding: var(--space-2xl) 0 var(--space-3xl);
+  }
 
-.legal-body {
-  padding: var(--space-2xl) 0 var(--space-3xl);
-}
+  .legal-content {
+    max-width: 860px;
+  }
+
+  .legal-content h2 {
+    font-size: clamp(1.75rem, 3vw, 2.4rem);
+    line-height: 1.15;
+    margin: 0 0 1rem;
+  }
+
+  .legal-content h3 {
+    font-size: 1.35rem;
+    line-height: 1.25;
+    margin: 2rem 0 0.75rem;
+  }
+
+  .legal-content p,
+  .legal-content li {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--color-text);
+  }
+
+  .legal-content p {
+    margin: 0 0 1.25rem;
+  }
+
+  .legal-content ul,
+  .legal-content ol {
+    margin: 0 0 1.5rem 1.25rem;
+    padding: 0;
+  }
+
+  .legal-content li {
+    margin-bottom: 0.65rem;
+  }
+
+  @media (max-width: 768px) {
+    .legal-hero {
+      padding: var(--space-xl) 0 var(--space-lg);
+    }
+
+    .legal-body {
+      padding: var(--space-xl) 0 var(--space-2xl);
+    }
+
+    .legal-content h2 {
+      font-size: 2rem;
+    }
+
+    .legal-content h3 {
+      font-size: 1.2rem;
+    }
+
+    .legal-content p,
+    .legal-content li {
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+  }
 </style>
