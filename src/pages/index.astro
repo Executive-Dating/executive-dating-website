@@ -10,15 +10,45 @@ import ImagePlaceholder from '../components/ImagePlaceholder.astro';
 ---
 
 <BaseLayout
-  title="Executive Dating — Private Introduction Service, Gauteng"
-  description="A discreet, human-led introduction service for accomplished professionals in Gauteng. No apps. No algorithms. Personal, curated, and confidential."
+  title="Matchmaking Services Johannesburg | Private Dating Agency Gauteng"
+  description="Private matchmaking service for professionals in Johannesburg. Discreet, human-led introductions. No payment required until accepted."
 >
 
   <Hero
-    headline="Curated Introductions for Discerning Adults"
-    subheadline="Executive Dating is not an app. It is not an algorithm. It is a personal, discreet introduction service — guided by a human advisor who takes the time to understand who you are and what you are genuinely looking for."
+    headline="Professional Matchmaking Services in Johannesburg"
+    subheadline="A private, human-led dating service for professionals in Johannesburg and Gauteng. We introduce compatible individuals through a discreet and carefully managed process — no apps, no algorithms."
     tall={true}
   />
+
+  <!-- How Our Matchmaking Process Works -->
+  <section class="process-overview bg-white">
+    <div class="container">
+      <div class="text-center" style="margin-bottom: var(--space-2xl);">
+        <span class="eyebrow">Our Approach</span>
+        <h2 class="section-title">How Our Matchmaking Process Works</h2>
+        <span class="gold-rule gold-rule-center" role="presentation"></span>
+      </div>
+      <div class="process-steps-grid">
+        <div class="process-step-card">
+          <span class="step-number">01</span>
+          <p>Submit a confidential enquiry</p>
+        </div>
+        <div class="process-step-card">
+          <span class="step-number">02</span>
+          <p>Speak with a relationship advisor</p>
+        </div>
+        <div class="process-step-card">
+          <span class="step-number">03</span>
+          <p>Meet in person for a private consultation</p>
+        </div>
+        <div class="process-step-card">
+          <span class="step-number">04</span>
+          <p>If accepted, we begin curated introductions</p>
+        </div>
+      </div>
+      <p class="process-note">No payment is required unless you are accepted.</p>
+    </div>
+  </section>
 
   <!-- What Is Executive Dating -->
   <section class="what-section bg-cream">
@@ -172,6 +202,50 @@ import ImagePlaceholder from '../components/ImagePlaceholder.astro';
     </div>
   </section>
 
+  <SectionDivider />
+
+  <!-- Location SEO Section -->
+  <section class="location-section bg-white">
+    <div class="container">
+      <div class="location-grid">
+        <div class="location-text">
+          <span class="eyebrow">Where We Work</span>
+          <h2 class="section-title">Serving Johannesburg &amp; Gauteng Professionals</h2>
+          <span class="gold-rule" role="presentation"></span>
+          <p>We work with clients across:</p>
+          <ul class="styled-list location-list">
+            <li>Sandton</li>
+            <li>Rosebank</li>
+            <li>Randburg</li>
+            <li>Pretoria</li>
+            <li>Greater Johannesburg</li>
+          </ul>
+          <p style="margin-top: var(--space-md);">Our service is designed for professionals seeking meaningful, long-term relationships.</p>
+          <div style="margin-top: var(--space-xl); display: flex; flex-wrap: wrap; gap: var(--space-sm);">
+            <a href="/matchmaking-services-johannesburg" class="btn btn-outline-gold">Matchmaking in Johannesburg</a>
+            <a href="/dating-agency-gauteng" class="btn btn-outline-gold">Dating Agency Gauteng</a>
+          </div>
+        </div>
+        <div class="location-callout">
+          <span class="eyebrow">Why Choose Us</span>
+          <h2 class="section-title">A More Considered Way to Meet</h2>
+          <span class="gold-rule" role="presentation"></span>
+          <p>Unlike dating apps, we:</p>
+          <ul class="styled-list" style="margin: var(--space-md) 0;">
+            <li>Personally vet every member</li>
+            <li>Prioritise compatibility over volume</li>
+            <li>Maintain strict privacy and discretion</li>
+          </ul>
+          <div class="who-note">
+            <p>This is a structured, human-led matchmaking service — not an app.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <SectionDivider color="turq" />
+
   <!-- Final CTA -->
   <CTABlock
     heading="Ready to Take the First Step?"
@@ -183,6 +257,76 @@ import ImagePlaceholder from '../components/ImagePlaceholder.astro';
 </BaseLayout>
 
 <style>
+/* Process overview section */
+.process-overview {
+  padding: var(--space-3xl) 0;
+}
+
+.process-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+  margin-bottom: var(--space-xl);
+}
+
+.process-step-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-top: 3px solid var(--color-gold);
+  border-radius: var(--radius-md);
+  padding: var(--space-xl) var(--space-lg);
+  text-align: center;
+}
+
+.step-number {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-gold-light);
+  margin-bottom: var(--space-sm);
+  line-height: 1;
+}
+
+.process-step-card p {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  line-height: 1.55;
+  margin: 0;
+  max-width: none;
+}
+
+.process-note {
+  text-align: center;
+  font-family: var(--font-accent);
+  font-size: var(--text-lg);
+  font-style: italic;
+  color: var(--color-gold-deep);
+  margin: 0 auto;
+}
+
+/* Location section */
+.location-section {
+  padding: var(--space-3xl) 0;
+}
+
+.location-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3xl);
+  align-items: start;
+}
+
+.location-list {
+  margin: var(--space-sm) 0 0;
+}
+
+.location-callout {
+  background: var(--color-cream);
+  border-radius: var(--radius-md);
+  padding: var(--space-2xl);
+}
+
 /* What section */
 .what-grid, .who-grid, .advisor-preview-grid {
   display: grid;
@@ -287,11 +431,16 @@ import ImagePlaceholder from '../components/ImagePlaceholder.astro';
 }
 
 @media (max-width: 768px) {
-  .what-grid, .who-grid, .advisor-preview-grid {
+  .what-grid, .who-grid, .advisor-preview-grid, .location-grid {
     grid-template-columns: 1fr;
   }
   .who-image { order: -1; }
   .testimonials-grid { grid-template-columns: 1fr; }
   .what-actions { flex-direction: column; }
+  .process-steps-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 480px) {
+  .process-steps-grid { grid-template-columns: 1fr; }
 }
 </style>

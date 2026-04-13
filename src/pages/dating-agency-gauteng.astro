@@ -1,0 +1,221 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Private Dating Agency Gauteng",
+  "description": "Executive Dating is a private dating agency in Gauteng offering a discreet, structured alternative to online dating for professionals in Johannesburg and Pretoria.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Executive Dating",
+    "url": "https://executivedating.co.za"
+  },
+  "areaServed": [
+    { "@type": "AdministrativeArea", "name": "Gauteng" },
+    { "@type": "City", "name": "Johannesburg" },
+    { "@type": "City", "name": "Pretoria" },
+    { "@type": "City", "name": "Sandton" }
+  ]
+};
+---
+
+<BaseLayout
+  title="Private Dating Agency in Gauteng | Executive Dating"
+  description="Executive Dating is a private dating agency in Gauteng. A discreet, structured alternative to online dating for professionals in Johannesburg and Pretoria."
+  canonical="https://executivedating.co.za/dating-agency-gauteng"
+>
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+  <!-- Page Hero -->
+  <div class="page-hero bg-warm">
+    <div class="container-narrow">
+      <div class="breadcrumb">
+        <a href="/">Home</a>
+        <span aria-hidden="true"> / </span>
+        <span>Dating Agency Gauteng</span>
+      </div>
+      <span class="eyebrow">Gauteng · South Africa</span>
+      <h1>Private Dating Agency in Gauteng</h1>
+      <span class="gold-rule" role="presentation"></span>
+      <p class="page-hero-intro">Executive Dating is a private dating agency in Gauteng offering a more discreet and structured alternative to online dating.</p>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="page-layout">
+    <div class="container">
+      <div class="page-grid">
+
+        <main class="page-body">
+
+          <p class="page-lead">We work with professionals across Johannesburg and Pretoria who are serious about finding a compatible partner. Our approach is human-led, confidential, and built around genuine compatibility — not swipes, algorithms, or profile browsing.</p>
+
+          <h2>Why Choose a Dating Agency Instead of Apps</h2>
+
+          <p>Online dating apps were designed to keep you engaged, not to help you find a partner. Their business model depends on you staying on the platform — which is precisely the opposite of what you actually want.</p>
+
+          <div class="compare-grid">
+            <div class="compare-col compare-col--negative">
+              <h3>Dating Apps</h3>
+              <ul class="compare-list compare-list--negative">
+                <li>Endless swiping with no clear outcome</li>
+                <li>No screening — anyone can appear</li>
+                <li>Public exposure of your personal details</li>
+                <li>Guesswork about intent and compatibility</li>
+                <li>Time-consuming and emotionally draining</li>
+              </ul>
+            </div>
+            <div class="compare-col compare-col--positive">
+              <h3>Executive Dating</h3>
+              <ul class="compare-list compare-list--positive">
+                <li>Carefully selected introductions</li>
+                <li>Every member personally vetted</li>
+                <li>Completely private and confidential</li>
+                <li>Personal guidance from a dedicated advisor</li>
+                <li>A structured process that respects your time</li>
+              </ul>
+            </div>
+          </div>
+
+          <h2>Our Approach</h2>
+
+          <p>We focus on quality over quantity. That means fewer introductions — but each one is chosen with care, based on a genuine understanding of who you are and what you are looking for.</p>
+
+          <p>Every client begins with a personal consultation. Your advisor takes the time to understand your lifestyle, your values, your relationship history, and — importantly — what you genuinely need in a partner, not just what you think you should want.</p>
+
+          <p>From there, introductions are arranged one at a time. You are never presented with a database to scroll through. Instead, your advisor comes to you when they have identified someone they genuinely believe is right for you — and explains why.</p>
+
+          <h2>Who We Work With in Gauteng</h2>
+
+          <p>Our members are professionals, executives, business owners, and high-achieving individuals from across the Gauteng region. They share a few things in common:</p>
+
+          <ul class="styled-list page-list">
+            <li>They are genuinely ready for a long-term relationship</li>
+            <li>They value discretion and privacy</li>
+            <li>They are willing to be honest about who they are and what they want</li>
+            <li>They are not looking for something casual</li>
+          </ul>
+
+          <p>If that describes you, we welcome your enquiry. If you are still exploring, or if you are not yet certain what you want, we will tell you honestly that this may not be the right time — and we will not waste your time or ours.</p>
+
+          <h2>Gauteng Coverage</h2>
+
+          <p>Executive Dating operates across the Gauteng province, with a particular concentration of members in Johannesburg and Pretoria. We serve clients in:</p>
+
+          <div class="areas-grid">
+            {['Sandton', 'Johannesburg', 'Rosebank', 'Randburg', 'Midrand', 'Pretoria', 'Centurion', 'Fourways', 'Bryanston', 'Greater Gauteng'].map(area => (
+              <div class="area-pill">{area}</div>
+            ))}
+          </div>
+
+          <h2>The First Step</h2>
+
+          <p>Your enquiry is confidential, carries no commitment, and attracts no fee. It takes a few minutes to complete and is reviewed personally by your advisor within 2–3 business days.</p>
+
+          <p>If the service is a good fit, you will be invited to meet for coffee — a relaxed, low-pressure conversation in which you can ask questions, share more about yourself, and decide whether you would like to proceed.</p>
+
+          <p>Everything proceeds at your pace, on your terms. There is no pressure at any stage.</p>
+
+          <div class="cta-block">
+            <span class="gold-rule" role="presentation"></span>
+            <h3>Submit a Confidential Enquiry</h3>
+            <p>No fee. No commitment. A personal response within 2–3 business days. Available to Gauteng professionals only.</p>
+            <div class="cta-btns">
+              <a href="/enquire" class="btn btn-primary">Enquire Confidentially</a>
+              <a href="/matchmaking-services-johannesburg" class="btn btn-outline-gold">Matchmaking in Johannesburg</a>
+            </div>
+          </div>
+
+        </main>
+
+        <aside class="page-sidebar">
+          <div class="sidebar-card sidebar-card--gold">
+            <h4>Take the First Step</h4>
+            <p>No fee. No commitment. A personal response within 2–3 business days.</p>
+            <a href="/enquire" class="btn btn-primary">Enquire Now</a>
+          </div>
+          <div class="sidebar-card">
+            <h4>Related Pages</h4>
+            <nav class="sidebar-links">
+              <a href="/">Executive Dating Home</a>
+              <a href="/matchmaking-services-johannesburg">Matchmaking in Johannesburg</a>
+              <a href="/how-it-works">How It Works</a>
+              <a href="/meet-your-advisor">Meet Your Advisor</a>
+            </nav>
+          </div>
+          <div class="sidebar-card">
+            <h4>From the Blog</h4>
+            <nav class="sidebar-links">
+              <a href="/blog/why-dating-apps-dont-work-professionals-south-africa">Why Dating Apps Don't Work for Professionals</a>
+              <a href="/blog/what-to-expect-matchmaking-johannesburg">What to Expect from Matchmaking</a>
+              <a href="/blog/professional-matchmaking-works-who-its-for">How Professional Matchmaking Works</a>
+            </nav>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </div>
+
+</BaseLayout>
+
+<style>
+  .page-hero { padding: var(--space-2xl) 0 var(--space-xl); border-bottom: 1px solid var(--color-border); }
+  .breadcrumb { font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text-light); margin-bottom: var(--space-sm); }
+  .breadcrumb a { color: var(--color-gold-deep); text-decoration: none; }
+  .page-hero h1 { font-size: clamp(2rem, 4.5vw, 3.2rem); margin: 0.5rem 0 var(--space-sm); }
+  .page-hero-intro { font-size: var(--text-lg); color: var(--color-text-muted); line-height: 1.65; max-width: 60ch; margin-top: var(--space-md); }
+
+  .page-layout { padding: var(--space-3xl) 0; background: var(--color-bg); }
+  .page-grid { display: grid; grid-template-columns: 1fr 300px; gap: var(--space-3xl); align-items: start; }
+
+  .page-lead { font-family: var(--font-accent); font-size: clamp(1.1rem, 2vw, 1.3rem); font-style: italic; line-height: 1.7; color: var(--color-text); border-left: 3px solid var(--color-gold); padding-left: var(--space-lg); margin-bottom: var(--space-xl); max-width: none; }
+
+  .page-body h2 { font-family: var(--font-heading); font-size: var(--text-2xl); font-weight: 700; color: var(--color-text); margin: var(--space-2xl) 0 var(--space-md); }
+  .page-body p { font-size: var(--text-base); line-height: 1.82; color: var(--color-text-muted); margin-bottom: var(--space-md); max-width: none; }
+
+  .page-list { margin: var(--space-md) 0 var(--space-lg); }
+
+  /* Compare grid */
+  .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-lg); margin: var(--space-lg) 0 var(--space-xl); }
+  .compare-col { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--space-lg); }
+  .compare-col--negative { border-top: 3px solid var(--color-border); }
+  .compare-col--positive { border-top: 3px solid var(--color-turq); background: var(--color-turq-tint); }
+  .compare-col h3 { font-family: var(--font-heading); font-size: var(--text-lg); font-weight: 700; color: var(--color-text); margin-bottom: var(--space-md); }
+  .compare-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.6rem; }
+  .compare-list li { font-size: var(--text-base); color: var(--color-text-muted); padding-left: 1.5rem; position: relative; line-height: 1.5; }
+  .compare-list--negative li::before { content: '✕'; position: absolute; left: 0; color: var(--color-text-light); font-size: 0.8rem; top: 0.2rem; }
+  .compare-list--positive li::before { content: '✓'; position: absolute; left: 0; color: var(--color-turq-deep); font-weight: 700; font-size: 0.9rem; top: 0.1rem; }
+
+  /* Areas grid */
+  .areas-grid { display: flex; flex-wrap: wrap; gap: 0.6rem; margin: var(--space-md) 0 var(--space-lg); }
+  .area-pill { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 100px; padding: 0.4rem 1rem; font-size: var(--text-sm); font-weight: 700; color: var(--color-text-muted); }
+
+  /* CTA block */
+  .cta-block { background: var(--color-gold-tint); border: 1px solid var(--color-gold-light); border-radius: var(--radius-md); padding: var(--space-xl); margin-top: var(--space-2xl); }
+  .cta-block h3 { font-family: var(--font-heading); font-size: var(--text-2xl); margin: var(--space-sm) 0; }
+  .cta-block p { font-size: var(--text-base); margin-bottom: var(--space-lg); }
+  .cta-btns { display: flex; flex-wrap: wrap; gap: var(--space-sm); }
+
+  /* Sidebar */
+  .page-sidebar { position: sticky; top: 100px; display: flex; flex-direction: column; gap: var(--space-lg); }
+  .sidebar-card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--space-lg); }
+  .sidebar-card--gold { background: var(--color-gold-tint); border-color: var(--color-gold-light); display: flex; flex-direction: column; gap: 0.75rem; }
+  .sidebar-card h4 { font-family: var(--font-heading); font-size: var(--text-lg); font-weight: 700; margin-bottom: var(--space-sm); color: var(--color-text); }
+  .sidebar-card p { font-size: var(--text-sm); max-width: none; margin: 0; }
+  .sidebar-card .btn { width: 100%; text-align: center; justify-content: center; }
+  .sidebar-links { display: flex; flex-direction: column; gap: 0.6rem; }
+  .sidebar-links a { font-size: var(--text-sm); color: var(--color-text-muted); text-decoration: none; line-height: 1.45; padding: 0.4rem 0; border-bottom: 1px solid var(--color-border); transition: color var(--transition); }
+  .sidebar-links a:last-child { border-bottom: none; }
+  .sidebar-links a:hover { color: var(--color-gold-deep); text-decoration: none; }
+
+  @media (max-width: 900px) {
+    .page-grid { grid-template-columns: 1fr; }
+    .page-sidebar { position: static; }
+    .page-hero h1 { max-width: none; }
+    .cta-btns { flex-direction: column; }
+    .compare-grid { grid-template-columns: 1fr; }
+  }
+</style>

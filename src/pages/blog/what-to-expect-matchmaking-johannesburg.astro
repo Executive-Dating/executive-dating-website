@@ -1,0 +1,232 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const article = {
+  title: 'What to Expect from a Matchmaking Service in Johannesburg',
+  description: 'Considering professional matchmaking in Johannesburg but not sure what the process actually involves? Here is an honest account of every stage — from your first enquiry to your first introduction.',
+  publishDate: '2025-04-08',
+  displayDate: '8 April 2025',
+  readTime: '8 min read',
+  tag: 'Johannesburg',
+  slug: 'what-to-expect-matchmaking-johannesburg',
+};
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": article.title,
+  "description": article.description,
+  "datePublished": article.publishDate,
+  "author": {
+    "@type": "Person",
+    "name": "Your Advisor",
+    "worksFor": { "@type": "Organization", "name": "Executive Dating" }
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Executive Dating",
+    "url": "https://executivedating.co.za"
+  },
+  "mainEntityOfPage": `https://executivedating.co.za/blog/${article.slug}`,
+  "about": {
+    "@type": "Service",
+    "name": "Matchmaking Services Johannesburg",
+    "areaServed": [
+      { "@type": "City", "name": "Johannesburg" },
+      { "@type": "AdministrativeArea", "name": "Gauteng" }
+    ]
+  }
+};
+---
+
+<BaseLayout title={`${article.title} | Executive Dating`} description={article.description}>
+
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+  <div class="article-hero bg-warm">
+    <div class="container-narrow">
+      <div class="article-breadcrumb">
+        <a href="/blog">Insights</a>
+        <span aria-hidden="true"> / </span>
+        <span>{article.tag}</span>
+      </div>
+      <span class="eyebrow">{article.tag}</span>
+      <h1>{article.title}</h1>
+      <span class="gold-rule" role="presentation"></span>
+      <div class="article-meta">
+        <span class="article-author">By Your Advisor</span>
+        <span class="meta-sep" aria-hidden="true">·</span>
+        <time datetime={article.publishDate}>{article.displayDate}</time>
+        <span class="meta-sep" aria-hidden="true">·</span>
+        <span>{article.readTime}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="article-hero-img-wrap">
+    <img
+      src="/images/placeholder-consultation.svg"
+      alt="Professional matchmaking consultation in Johannesburg"
+      class="article-hero-img"
+      loading="eager"
+    />
+  </div>
+
+  <div class="article-layout">
+    <div class="container">
+      <div class="article-grid">
+
+        <article class="article-body">
+
+          <p class="article-lead">One of the most common reasons people hesitate to enquire about professional matchmaking is simply that they do not know what to expect. The process sounds either impossibly exclusive or suspiciously vague — and neither impression is accurate. Here is an honest, stage-by-stage account of what engaging a <a href="/matchmaking-services-johannesburg">matchmaking service in Johannesburg</a> actually involves.</p>
+
+          <h2>Before You Begin: What the Service Is — and Is Not</h2>
+
+          <p>It is worth being clear about what professional matchmaking is, because it is frequently misunderstood. It is not a dating website with a human interface. It is not a subscription service that sends you a list of profiles. It is not an app that has been dressed up with a personal touch.</p>
+
+          <p>A genuine matchmaking service is a human process managed by a specific person — your advisor — who develops a real understanding of who you are before making any introduction whatsoever. The value of the service lies entirely in the judgment and care that your advisor brings to this process. Technology plays no meaningful role in what actually matters.</p>
+
+          <h2>Stage One: The Enquiry</h2>
+
+          <p>The process begins with a short enquiry — typically submitted via an online form, email, or WhatsApp message. At this stage, you are not committing to anything. You are simply introducing yourself and indicating that you would like to find out more.</p>
+
+          <p>What you share at this point is relatively simple: a brief description of yourself, something about what you are looking for, and contact details. There is no fee to enquire. Nothing you share is used for any purpose other than helping your advisor understand whether the service is likely to be a good fit for you.</p>
+
+          <p>Expect a personal response within 2–3 business days. This will usually be a brief message from your advisor — not an automated reply — acknowledging your enquiry and suggesting a time to speak.</p>
+
+          <h2>Stage Two: The Initial Conversation</h2>
+
+          <p>The first conversation with your advisor is informal and low-pressure. It usually happens by phone or WhatsApp, and it typically lasts 15–30 minutes. Its purpose is mutual: your advisor wants to understand more about you and your situation; you want to understand more about how the service works and whether it feels right.</p>
+
+          <p>Your advisor will ask about your background, your relationship history, and what you are genuinely looking for — not in a clinical or interrogative way, but in the way that a thoughtful, experienced person who has done this for a long time naturally does.</p>
+
+          <p>This is also your opportunity to ask questions. Good ones to ask: How many members are currently active in Johannesburg or your area? How does the advisor decide who to introduce to whom? What happens if an introduction does not work out? How long does the process typically take?</p>
+
+          <p>At the end of this conversation, both you and your advisor should have a clear sense of whether it is worth taking the next step.</p>
+
+          <h2>Stage Three: The Consultation</h2>
+
+          <p>If your enquiry is suitable, you will be invited to meet your advisor in person — usually for coffee at a quiet, comfortable location in Johannesburg. This is the conversation that matters most in terms of what happens next.</p>
+
+          <p>Unlike the initial phone call, the consultation is deeper and more personal. Your advisor will want to understand you as a person — your values, your lifestyle, your experience of past relationships, your genuine readiness for something new. They will ask about things that a dating app profile could never capture: how you handle conflict, what a good relationship looked like for you in the past, what a good one looks like in your imagination of the future.</p>
+
+          <p>This is not a therapy session. It is a professional conversation with someone who needs to understand you well enough to make a genuinely useful introduction. The depth of what you share here will directly influence the quality of the introductions you receive.</p>
+
+          <p>At this stage, there is still no fee and no commitment. You leave the consultation with a clear picture of the service, and your advisor leaves with a clear picture of you.</p>
+
+          <h2>Stage Four: Acceptance</h2>
+
+          <p>Following the consultation, your advisor will consider whether to accept your application. Not everyone who enquires is accepted — and this is not a rejection of you as a person. It means that the service, at this point in time, does not have a strong basis for making introductions that would genuinely serve you.</p>
+
+          <p>If you are accepted, your advisor will explain the membership options and associated fees. Only at this point — and only if you choose to proceed — does any cost become relevant.</p>
+
+          <p>The fee structure at Executive Dating is straightforward: a once-off membership fee covering an initial period of curated introductions. There are no hidden costs, no per-introduction charges, and no recurring subscription.</p>
+
+          <h2>Stage Five: The Introductions Begin</h2>
+
+          <p>Once you are a member, your advisor begins the process of identifying suitable introductions. This does not happen immediately — quality introductions require careful thought, and your advisor will not arrange a meeting simply to demonstrate activity.</p>
+
+          <p>When your advisor believes they have identified someone suitable, they will contact you with a brief description of the person and why they believe the introduction has genuine potential. If you are willing to meet, a time and place is arranged — again, usually coffee in Johannesburg, in a location that is comfortable and low-pressure for both parties.</p>
+
+          <p>You will meet without photographs, without having seen each other's profiles, and without the transactional dynamic that defines most app-based first meetings. You will know something meaningful about each other — because your advisor has told you — but you will meet primarily as two people, not as two digital profiles made physical.</p>
+
+          <h2>What to Expect from the Introductions Themselves</h2>
+
+          <p>Not every introduction will lead somewhere. That is true of any process, including this one. What is different is the quality of what arrives — and the fact that when something does not work, your advisor learns from it and refines their approach accordingly.</p>
+
+          <p>A good matchmaker does not simply make introductions and move on. They follow up. They ask what worked and what did not. They use this information to improve the next introduction. Over time, the process becomes increasingly calibrated to the specific qualities that genuinely matter to you — including some you may not have known to articulate at the start.</p>
+
+          <h2>The One Thing Most People Do Not Expect</h2>
+
+          <p>Almost universally, people who go through a genuine matchmaking consultation describe it as more valuable than they anticipated — regardless of what happens next. Being asked to articulate, honestly and in detail, what you are looking for and what you have to offer in a relationship is a clarifying experience in itself.</p>
+
+          <p>Many people arrive at their first consultation believing they know exactly what they want, and leave with a considerably more honest picture. That honesty — that self-knowledge — is the foundation on which every good introduction is built. It is also, more often than not, where real change begins.</p>
+
+          <div class="article-cta-block">
+            <span class="gold-rule" role="presentation"></span>
+            <h3>Ready to Understand More?</h3>
+            <p>Learn about our full process or submit a confidential enquiry — no fee, no commitment, just an honest first conversation.</p>
+            <div class="article-cta-btns">
+              <a href="/how-it-works" class="btn btn-primary">Full Process Details</a>
+              <a href="/enquire" class="btn btn-outline-gold">Enquire Confidentially</a>
+            </div>
+          </div>
+
+        </article>
+
+        <aside class="article-sidebar">
+          <div class="sidebar-card">
+            <h4>Related Reading</h4>
+            <nav class="sidebar-links">
+              <a href="/blog/why-dating-apps-dont-work-professionals-south-africa">Why Dating Apps Don't Work for Professionals</a>
+              <a href="/blog/professional-matchmaking-works-who-its-for">How Professional Matchmaking Works</a>
+              <a href="/blog/why-successful-professionals-use-matchmakers">Why Professionals Choose Matchmakers</a>
+              <a href="/blog/private-dating-service-johannesburg">Private Dating Services in Johannesburg</a>
+            </nav>
+          </div>
+          <div class="sidebar-card sidebar-card--gold">
+            <h4>Take the First Step</h4>
+            <p>No fee. No commitment. A personal response within 2–3 business days.</p>
+            <a href="/enquire" class="btn btn-primary">Enquire Now</a>
+          </div>
+          <div class="sidebar-card">
+            <h4>Our Services</h4>
+            <nav class="sidebar-links">
+              <a href="/matchmaking-services-johannesburg">Matchmaking in Johannesburg</a>
+              <a href="/dating-agency-gauteng">Dating Agency Gauteng</a>
+              <a href="/">Executive Dating Home</a>
+            </nav>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="article-back bg-warm">
+    <div class="container-narrow text-center">
+      <a href="/blog" class="btn btn-outline-gold">← Back to Insights</a>
+    </div>
+  </div>
+
+</BaseLayout>
+
+<style>
+  .article-hero { padding: var(--space-xl) 0 var(--space-lg); border-bottom: 1px solid var(--color-border); }
+  .article-breadcrumb { font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text-light); margin-bottom: var(--space-sm); }
+  .article-breadcrumb a { color: var(--color-gold-deep); text-decoration: none; }
+  .article-hero h1 { font-size: clamp(2rem, 4.5vw, 3.2rem); margin: 0.5rem 0 var(--space-sm); max-width: 22ch; }
+  .article-meta { display: flex; align-items: center; flex-wrap: wrap; gap: 0.5rem; font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text-light); margin-top: var(--space-sm); }
+  .article-author { font-weight: 700; color: var(--color-text-muted); }
+  .meta-sep { opacity: 0.4; }
+  .article-hero-img-wrap { width: 100%; max-height: 480px; overflow: hidden; }
+  .article-hero-img { width: 100%; height: 100%; max-height: 480px; object-fit: cover; }
+  .article-layout { padding: var(--space-3xl) 0; background: var(--color-bg); }
+  .article-grid { display: grid; grid-template-columns: 1fr 300px; gap: var(--space-3xl); align-items: start; }
+  .article-lead { font-family: var(--font-accent); font-size: clamp(1.1rem, 2vw, 1.3rem); font-style: italic; line-height: 1.7; color: var(--color-text); border-left: 3px solid var(--color-gold); padding-left: var(--space-lg); margin-bottom: var(--space-xl); max-width: none; }
+  .article-body h2 { font-family: var(--font-heading); font-size: var(--text-2xl); font-weight: 700; color: var(--color-text); margin: var(--space-2xl) 0 var(--space-md); }
+  .article-body p { font-size: var(--text-base); line-height: 1.82; color: var(--color-text-muted); margin-bottom: var(--space-md); max-width: none; }
+  .article-body a { color: var(--color-gold-deep); }
+  .article-body strong { color: var(--color-text); font-weight: 700; }
+  .article-cta-block { background: var(--color-gold-tint); border: 1px solid var(--color-gold-light); border-radius: var(--radius-md); padding: var(--space-xl); margin-top: var(--space-2xl); }
+  .article-cta-block h3 { font-family: var(--font-heading); font-size: var(--text-2xl); margin: var(--space-sm) 0; }
+  .article-cta-block p { font-size: var(--text-base); margin-bottom: var(--space-lg); }
+  .article-cta-btns { display: flex; flex-wrap: wrap; gap: var(--space-sm); }
+  .article-sidebar { position: sticky; top: 100px; display: flex; flex-direction: column; gap: var(--space-lg); }
+  .sidebar-card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--space-lg); }
+  .sidebar-card--gold { background: var(--color-gold-tint); border-color: var(--color-gold-light); display: flex; flex-direction: column; gap: 0.75rem; }
+  .sidebar-card h4 { font-family: var(--font-heading); font-size: var(--text-lg); font-weight: 700; margin-bottom: var(--space-sm); color: var(--color-text); }
+  .sidebar-card p { font-size: var(--text-sm); max-width: none; margin: 0; }
+  .sidebar-links { display: flex; flex-direction: column; gap: 0.6rem; }
+  .sidebar-links a { font-size: var(--text-sm); color: var(--color-text-muted); text-decoration: none; line-height: 1.45; padding: 0.4rem 0; border-bottom: 1px solid var(--color-border); transition: color var(--transition); }
+  .sidebar-links a:last-child { border-bottom: none; }
+  .sidebar-links a:hover { color: var(--color-gold-deep); text-decoration: none; }
+  .sidebar-card .btn { width: 100%; text-align: center; justify-content: center; }
+  .article-back { padding: var(--space-xl) 0; border-top: 1px solid var(--color-border); }
+  @media (max-width: 900px) {
+    .article-grid { grid-template-columns: 1fr; }
+    .article-sidebar { position: static; }
+    .article-hero h1 { max-width: none; }
+    .article-cta-btns { flex-direction: column; }
+  }
+</style>
